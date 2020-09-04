@@ -1,0 +1,158 @@
+body{
+  background: aliceblue; 
+  margin:0px;
+  padding: 0px;
+  min-width: 1024px;
+}
+img{
+  max-width: 100%;
+}
+header{
+  background: aliceblue;
+  border: double black;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;;
+}
+section{
+  border: ridge;
+  margin: 15px;
+  width: 60%;
+}
+article{
+  margin: 15px;
+  border: 1px solid #123456;
+  padding:20px;
+}
+aside article{
+  padding: 10px;
+}
+article img{
+  max-width: 500px;
+  display: block;
+  margin: auto;
+}
+article iframe{
+  display: block;
+  margin:auto;
+}
+aside{
+  border: ridge;
+  width: 30%;
+  background: orange;
+  padding:10px;
+  margin: 15px 10px;
+  height: 100%;;
+}
+.logo, .banner, .login{
+  object-fit: contain;
+  display: flex;
+  border: ridge;
+  width: 32%;
+  max-width: 350px;
+}
+.logo{
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+#logo{
+  width:100px;
+  height: 100px;
+}
+#logo, #titulo-logo{
+  margin: 5px;
+}
+#banner{
+  display:block;
+  margin:auto;
+  width:98%;
+  height: 98%;
+  
+}
+.login{
+  border: double;
+}
+.login-form{
+  text-align: center;
+  padding:20px;
+  width:100%;
+}
+.login-label{
+  display: inline-block;
+  text-align: right;
+  width:85px;
+}
+.login-input{
+  width: 130px;
+  margin:5px;
+}
+.login-buttons,.login-forget{
+  margin: 5px;
+}
+.menu{
+  padding: 15px;
+  background: #123456;
+  justify-content: space-around;
+}
+.menu li{
+  color: white;
+  list-style: none;
+  display: inline-block;
+  padding: 5px;
+  margin-right: 20px;
+}
+li a{
+  text-decoration: none;
+}
+li a:visited,li a:link{
+  color:white;
+}
+.main{
+  display:flex;
+  justify-content: space-around;
+}
+.footer{
+  padding: 5px;
+  background: gray;
+  text-align: center;
+  clear: both;
+}
+.aside footer{
+  background: #123456;
+  
+}
+.footer-aside{
+  background: #123456;
+  padding:10px;
+  margin-top: 50px;
+}
+.rrss-img{
+  background:white;
+  display: flex;
+  justify-content: space-around;
+  padding:5px;
+  align-items: center;
+}
+.footer-aside img{
+  width: 40px;
+}
+
+.contratos{
+  display: block;
+}
+
+.contratosexp{
+  display: block;
+}
+
+table{
+  align-content: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
