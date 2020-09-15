@@ -1,96 +1,178 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset = "utf-8"/>
-    <meta name = "viewport" content = "width=device-width,user-scalable=no,initial-scale=2"/>
-    <title> Agencia OnBreak </title>
-    <link href = "css/styles.css" rel = "stylesheet" type = "text/css"/>
-    <link href="img/logoontour.png" type="image/png" rel="icon" sizes="any"/>
-  </head>
-  <body>
-    <!--Header-->
-    <header>
-      <div class="logo">
-        <img id="logo" src="img/logoontour.png" alt="Logo"/>
-        <p id="titulo-logo">Llevando nuestros clientes a su mejor destino</p>
-      </div>
-      <div class="banner">
-        <img id="banner" src="img/banner.gif" alt="Banner"/>
-      </div>
-      <div class="login">
-        <form class="login-form" method="post" action="validar.php">
-          <div>
-            <label class="login-label" for="user">Usuario:</label>
-            <input class="login-input" type="text" name="user"/>
-          </div>
-          <div>
-            <label class="login-label" for="user">Contraseña:</label>
-            <input class="login-input" type="password" name="password" />
-          </div>
-          <div class="login-buttons">
-            <input type="submit" name="entrar" value="Entrar">
-          </div>
-          <div class="login-forget">
-            <a href="">¿olvidaste tu contraseña?</a>
-          </div>
-        </form>
-      </div>
-    </header>
-    <!--Navigation-->
-    <nav class="menu">
-      <ul class="list-nav">
-        <li><a href="#Inicio">Incio</a></li>
-        <li><a href="#Servicios">Servicios</a></li>
-        <li><a href="#Planes">Planes y destinos</a></li>
-        <li><a href="#Clientes">Clientes</a></li>
-        <li><a href="#Contacto">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="main">
-    <section>
-    <!--Article-->
-      <article>
-        <hgroup>
-        <h1>Articulo 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non facilis, at ea quasi consequuntur omnis, quae aliquid tempore, corrupti quisquam provident! Repellat perferendis atque fugiat, omnis cum quod consectetur excepturi?</p>
-      </hgroup>
-      <img src="img/imagen1.jpeg" alt="imagen1"/>
-      </article>
-      <article>
-        <hgroup>
-        <h1>Articulo</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non facilis, at ea quasi consequuntur omnis, quae aliquid tempore, corrupti quisquam provident! Repellat perferendis atque fugiat, omnis cum quod consectetur excepturi?</p>
-        <iframe width="480" height="320" src="https://www.youtube.com/embed/7H9ZQSZ9G9I" frameborder="0"></iframe>
-      </hgroup>
-      </article>
-      <article>
-        <hgroup>
-        <h1>Articulo</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non facilis, at ea quasi consequuntur omnis, quae aliquid tempore, corrupti quisquam provident! Repellat perferendis atque fugiat, omnis cum quod consectetur excepturi?</p>
-      </hgroup>
-      </article>
-  </section>
-  <aside>
-    <article>
-      <h1>Titulo 2</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, soluta magnam ipsum autem officiis perferendis necessitatibus quod, perspiciatis explicabo rerum at eius pariatur numquam! Quasi aspernatur praesentium blanditiis tempora necessitatibus.</p>
-    </article>
-    <article>
-      <h1>Titulo 2</h1>
-      <iframe width="80%" height="30%" src="https://www.youtube.com/embed/J---aiyznGQ" frameborder="0"></iframe>
-    </article>
-    <footer class="footer-aside">
-      <div class="rrss-img">
-      <a href="www.facebook.com"><img src="img/facebook.png"/></a>
-      <a href="www.facebook.com"></a><img src="img/instagram.png"/></a>
-      <a href="www.facebook.com"></a><img src="img/twitter.png"/></a>
-      <a href="www.facebook.com"></a><img src="img/youtube.png"/></a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnBoard Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    
+<header>
+    <div class="menu">
+        <div class="contenedor">
+            <p class="logo">OnBoard</p>
+            <nav>
+                <ul>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Galeria</a></li>
+                    <li><a href="">Reservas</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Acerca de</a></li>
+                    <li><a href="">Equipo</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    </footer>
-  </aside>
-</div>
-  <footer class="footer">
-    DuocUC Sede Viña del Mar | Ingenieria de Software | 2020
-  </footer>
-  </body>
+</header>
+
+<section id="intro">
+    <div class="contenedor">
+        <div class="contenedor-titulo">
+            <div class="titulo">
+                <h1>Llevando nuestros clientes a su mejor destino</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias asperiores aliquid incidunt voluptates ut quod eligendi. Deserunt ratione illum pariatur, animi consequuntur magnam dolor sapiente ipsam, architecto est culpa error.</p>
+                <div class="botones">
+                    <a href="#menu" class="menu">Ver viajes</a>
+                    <a href="" class="reservation">Reservas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="our-story">
+    <div class="contenedor">
+        <div class="izquierda">
+            <p class="our-story">OUR STORY</p>
+            <hr>
+            <h2>Welcome To Royal</h2>
+            <p class="texto">Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+        </div>
+        <div class="derecha">
+            <img src="imagenes/story.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+<section id="menu">
+    <div class="contenedor">
+
+        <div class="linea1">
+
+            <div class="texto">
+                <ul>
+                    <li class="precio">$35.000</li>
+                    <li class="titulo">A acostarse</li>
+                    <li class="parrafo">Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</li>
+                </ul>
+            </div>
+            <div class="foto"></div>
+            <div class="texto">
+                <ul>
+                    <li class="precio">$35.000</li>
+                    <li class="titulo">A acostarse</li>
+                    <li class="parrafo">Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</li>
+                </ul>
+            </div> 
+
+        </div>
+
+        <div class="linea2">
+            <div class="foto hongos" style="width: 33.5%;"></div>
+            <div class="texto" style="width: 30%;">
+                <ul>
+                    <li class="precio">$35.000</li>
+                    <li class="titulo">A acostarse</li>
+                    <li class="parrafo">Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.</li>
+                </ul>
+            </div>
+            <div class="foto pez" style="width: 33.5%;"></div>
+
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+    <div class="contenedor">
+        <p class="titulo">Testimonials</p>
+        <hr>
+        <h2>What People are Saying</h2>
+        <div class="contenedor-testimonials">
+            <div class="testimonial">
+                <img src="imagenes/estrellas.png" alt="">
+                <h3>“A Great Find”</h3>
+                <p class="texto">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu ante eu lectus ornare porta.“
+                </p>
+                <p class="nombre">Divi</p>
+            </div>
+            <div class="testimonial">
+                <img src="imagenes/estrellas.png" alt="">
+                <h3>“A Great Find”</h3>
+                <p class="texto">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu ante eu lectus ornare porta.“
+                </p>
+                <p class="nombre">Divi</p>
+            </div>
+            <div class="testimonial">
+                <img src="imagenes/estrellas.png" alt="">
+                <h3>“A Great Find”</h3>
+                <p class="texto">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu ante eu lectus ornare porta.“
+                </p>
+                <p class="nombre">Divi</p>
+            </div>
+            <div class="testimonial">
+                <img src="imagenes/estrellas.png" alt="">
+                <h3>“A Great Find”</h3>
+                <p class="texto">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu ante eu lectus ornare porta.“
+                </p>
+                <p class="nombre">Divi</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contacto">
+    <div class="contenedor">
+        <div class="izquierda">
+            <h2>Hours of Operation</h2>
+            <ul>
+                <li>MON – FRI</li>
+                <li>10:00am – 1:00pm</li>
+                <li>4:00pm – 10:30pm</li>
+            </ul>
+            <ul>
+                <li>SAT</li>
+                <li>3:00pm – 10:30pm</li>
+            </ul>
+            <ul id="tercero">
+                <li>SUN</li>
+                <li>We are closed</li>
+            </ul>
+            <a href="">MAKE A RESERVATION</a>
+
+        </div>
+        <div class="derecha">
+            <h3>Drop Us a Line</h3>
+            <p>Don’t be shy. Let us know if you have any questions!</p>
+            <a href="">Contact Us</a>
+            <h3 class="news">Our Newsletter</h3>
+            <p>Dialogue is an essential part of any script</p>
+            <form action="">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Email">
+                <input type="submit" value="Contact Us">
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>The game</p>
+</footer>
+</body>
 </html>

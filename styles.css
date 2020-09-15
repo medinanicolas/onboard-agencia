@@ -1,0 +1,384 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+.contenedor {
+    width: 95%;
+    max-width: 2560px;
+    margin:auto;
+}
+
+.menu {
+    background: #fff;
+    padding: 9px 20px;
+}
+
+.menu .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #000;
+}
+
+/* INTRO  */
+
+#intro {
+    background: url(imagenes/back.jpg);
+    text-align: center;
+    height: 60vh;
+    margin-top: -60px;
+    background-size: cover;
+    background-position: 57% 67%;
+}
+
+#intro h1 {
+    font-family: 'Playfair Display';
+    font-size: 72px;
+    color: #fff;
+    font-weight: normal;
+    padding-top: 60px;
+}
+
+#intro p {
+    color: #bfbfbf;
+    font-size: 18px;
+    line-height: 36px;
+    width: 60%;
+    margin: auto;
+}
+
+#intro .menu {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 9px;
+    background: transparent;
+}
+
+#intro .reservation {
+    color: #fff;
+    padding: 9px;
+    background: #c39d63;
+}
+
+#intro .botones {
+    margin-top: 50px;
+}
+
+#intro .botones a {
+    margin-right: 20px;
+    padding: 9px 23px;
+}
+
+/* OUR-STORY */
+
+#our-story {
+    padding: 90px 0;
+}
+
+#our-story .contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.our-story {
+    color: #bfbfbf;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+hr {
+    width: 40px;
+    float: left;
+    border-color: #c29d63;
+}
+
+#our-story h2 , #testimonials h2{
+    margin-top: 50px;
+    font-size: 48px;
+    font-family: 'Playfair Display';
+    font-weight: 300;
+}
+
+#our-story .texto, .testimonial .texto {
+    font-size: 17px;
+    color: #939393;
+    line-height: 30px;
+    width: 88%;
+}
+
+#our-story .izquierda{
+    width: 45%;
+}
+
+/* MENU  */
+
+#menu {
+    background-color: #1f1f1f;
+    margin-bottom: 100px;
+}
+
+#menu .foto {
+    background: url(imagenes/cangrejo.png);
+    width: 300px;
+    height: 285px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#menu .linea1 div, #menu .linea2 div {
+    display: inline-block;
+    width: 33%;
+}
+
+#menu .linea1, #menu .linea2 {
+    background: #fff;
+    text-align: center;
+}
+
+#menu li {
+    list-style: none;
+}
+
+#menu .precio {
+    color: #c29d62;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#menu .titulo {
+    font-family: 'Playfair Display';
+    font-size: 24px;
+    font-weight: 100;
+}
+
+#menu .parrafo {
+    color: #939393;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+#menu .hongos {
+    background: url(imagenes/hongos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: -11px;
+    left: -13px;
+}
+
+#menu .pez {
+    background: url(imagenes/pez.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: -11px;
+    right: -13px;
+}
+
+#menu .contenedor {
+    max-width: 1130px;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu .texto {
+    position: relative;
+    top: -30px;
+}
+
+#menu .linea2 {
+    height: 275px;
+}
+
+
+/* TESTIMONIALS */
+
+#testimonials {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 90px 0;
+}
+
+#testimonials .titulo {
+    color: #bfbfbf;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+#testimonials hr {
+    width: 40px;
+    float: none;
+    font-weight: 700;
+}
+
+.contenedor-testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testimonial {
+    width: 25%;
+    text-align: left;
+}
+
+.testimonial img {
+    width: 55%;
+}
+
+#testimonials .contenedor{
+    max-width: 1150px;
+}
+
+/* CONTACTO  */
+
+#contacto {
+    background: url(imagenes/restaurant.jpg);
+    color: #fff;
+    text-align: center;
+    padding: 90px 0;
+}
+
+#contacto .contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+#contacto .izquierda, #contacto .derecha {
+    background: #1f1f1f;
+    padding: 77px 29px;   
+}
+
+#contacto .izquierda {
+    margin-right: 40px;
+}
+
+#contacto ul {
+    border-bottom: 2px solid #c29d62;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+ul#tercero {
+    border-bottom: 0px;
+}
+
+#contacto ul li {
+    list-style: none;
+    font-size: 15px;
+}
+
+#contacto h2 {
+    font-family: 'Playfair Display';
+    font-size: 32px;
+    font-weight: 100;
+}
+
+#contacto ul li:nth-child(1) { /* Afecta al primer elemento de la lista */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#contacto a {
+    color: #fff;
+    padding: 9px;
+    background: #c39d63;
+    letter-spacing: 2px;
+    display: 	inline-block;
+    margin-top: 20px;
+} 
+
+#contacto h3 {
+    font-size: 23px;
+    font-weight: 100;
+    margin: 0;
+}
+
+#contacto .derecha p {
+    opacity: 0.7;
+    width: 70%;
+    margin: auto;
+}
+
+#contacto .derecha a {
+    padding: 9px 12px;
+}
+
+#contacto h3.news {
+    margin-top: 67px;
+}
+
+#contacto form {
+    margin-top: 25px;
+}
+
+input[type="text"] {
+    width: 72%;
+    border: 0;
+    background: #111111;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+::placeholder {
+    color: #cdcdcd;
+}
+::-ms-input-placeholder {
+    color: #cdcdcd;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 78%;
+    margin: auto;
+    border: 0;
+    background-color: #c29d63;
+    color: #fff;
+    padding: 11px 0;
+    font-size: 16px;
+}
+
+#contacto .izquierda{
+    width: 35%;
+}
+
+#contacto .derecha {
+    padding: 99px 0;
+    width: 40%;
+}
+
+/* FOOTER  */
+footer {
+    background: #1f1f1f;
+    margin-top: -16px;
+    height: 80px;
+    color: #939393;
+    text-align: center;
+}
+
+footer p {
+    padding-top: 28px;
+}
