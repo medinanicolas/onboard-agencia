@@ -395,6 +395,7 @@ footer p {
         top: 93px;
         left: 0;
         background: #000;
+        opacity: 0.95;
         width: 100%;
         display: none;
     }
