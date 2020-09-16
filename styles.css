@@ -491,9 +491,32 @@ footer p {
     #contacto {
         padding: 79px 0;
     }
+
+    @media (max-height: 750px){
+        #intro h1 {
+            padding-top: 4px;
+        }
+        #intro p {
+            line-height: 30px;
+        }
+    }
+
+    @media (max-height: 700px){
+        #intro p {
+            margin-top: -18px;
+            line-height: 24px;
+        }
+    }
 }
 
 @media screen and (max-width: 500px) {
+    #intro h1 {
+        font-size: 40px;
+        padding-top: 18px;
+    }  
+}
+
+@media screen and (max-width: 420px) {
     #menu {
         height: 1980px;
     }
@@ -514,5 +537,52 @@ footer p {
     #contacto .izquierda, #contacto .derecha {
         padding: 24px 29px;
     }
+
+    @media (max-height:820px){
+        #intro p {
+            line-height: 31px;
+        }
+    }
+
+    @media (max-height: 700px){
+        #intro p {
+            margin-top: -18px;
+            line-height: 24px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    @media (max-height:640px){
+        #intro h1 {
+            font-size: 32px;
+        }
+        #intro p {
+            font-size: 16px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 306px) {
+    #intro h1 {
+        font-size: 28px;
+    }
+    #intro p {
+        font-size: 14px;
+    }
+    #intro .botones a {
+        margin-right: 3px;
+    }
+    #menu {
+        height: 2400px;
+    }
+    #menu .contenedor {
+        height: 2400px;
+    }
+
+
 
 }
