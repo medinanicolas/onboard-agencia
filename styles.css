@@ -494,5 +494,25 @@ footer p {
 }
 
 @media screen and (max-width: 500px) {
+    #menu {
+        height: 1980px;
+    }
+    #menu .contenedor {
+        height: 1980px;
+    }
+    #intro h1 {
+        font-size: 35px;
+        padding-top: 6px;
+        width: 100%;
+    }
+    #intro {
+        background-position: 9% 67%;
+    }
+    #intro p {
+        width: 100%;
+    }
+    #contacto .izquierda, #contacto .derecha {
+        padding: 24px 29px;
+    }
 
 }
