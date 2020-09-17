@@ -49,15 +49,15 @@ nav ul li a {
 #intro {
     background: url(imagenes/back.jpg);
     text-align: center;
-    height: 60vh;
-    margin-top: -60px;
+    min-height: 30vmax;
     background-size: cover;
     background-position: 57% 67%;
 }
 
 #intro h1 {
     font-family: 'Playfair Display';
-    font-size: 72px;
+    font-size: 3.5vmax;
+    margin-top:-0.5vmax;
     color: #fff;
     font-weight: normal;
     padding-top: 60px;
@@ -65,7 +65,7 @@ nav ul li a {
 
 #intro p {
     color: #bfbfbf;
-    font-size: 18px;
+    font-size: 1.5vmax;
     line-height: 36px;
     width: 60%;
     margin: auto;
@@ -387,202 +387,4 @@ footer {
 
 footer p {
     padding-top: 28px;
-}
-
-@media screen and (max-width: 880px) {
-    nav {
-        position: absolute;
-        top: 93px;
-        left: 0;
-        background: #000;
-        opacity: 0.95;
-        width: 100%;
-        display: none;
-    }
-    .menu-icon {
-        display: block;
-    }
-    nav ul li {
-        display: block;
-        margin-bottom: 15px;
-    }
-    nav ul li a {
-        color: #fff;
-    }
-    #intro h1 {
-        font-size: 45px;
-    }
-    #intro p {
-        width: 80%;
-    }
-    header .logo {
-        margin: 27px 2px;
-    }
-    #our-story .contenedor {
-        flex-direction: column;
-        align-items: center;
-    }
-    #our-story .texto {
-        padding-right: -120px;
-    }
-    #our-story .izquierda {
-        width: 90%;
-    }
-    #our-story .derecha img {
-        width: 100%;
-    }
-    #menu .linea1 div, #menu .linea2 div {
-        display: block;
-        width: 70%;
-        margin: auto;
-    }
-    #menu #texto-2 {
-        position: relative;
-        top: 18px;
-    }
-
-    .hongos {
-        width: 70.5% !important;
-        left: 0;
-        top: 50px !important;
-    }
-
-    #menu #ultimo {
-        top: 75px ;
-        width: 70.5% !important;
-    }
-    #menu {
-        height: 1650px;
-    }
-    #menu .contenedor {
-        height: 1650px;
-        background: #fff;
-    }
-    
-    .pez {
-        width: 70.5% !important;
-        left: 0;
-        top: 81px !important;
-    }
-    #primero {
-        margin-top: 20px;
-    }
-
-    .contenedor-testimonials {
-        flex-direction: column;
-    }
-    .testimonial {
-        width: 100%;
-    }
-    #contacto .contenedor {
-        flex-direction: column;
-    }
-    #contacto .izquierda, #contacto .derecha {
-        width: 80%;
-        margin: auto;
-    }
-    #contacto .izquierda, #contacto .derecha {
-        background: #1f1f1f;
-        padding: 30px 29px;
-    }
-    #contacto .izquierda  {
-        margin-bottom: 40px ;
-    }
-    #contacto {
-        padding: 79px 0;
-    }
-
-    @media (max-height: 750px){
-        #intro h1 {
-            padding-top: 4px;
-        }
-        #intro p {
-            line-height: 30px;
-        }
-    }
-
-    @media (max-height: 700px){
-        #intro p {
-            margin-top: -18px;
-            line-height: 24px;
-        }
-    }
-}
-
-@media screen and (max-width: 500px) {
-    #intro h1 {
-        font-size: 40px;
-        padding-top: 18px;
-    }  
-}
-
-@media screen and (max-width: 420px) {
-    #menu {
-        height: 1980px;
-    }
-    #menu .contenedor {
-        height: 1980px;
-    }
-    #intro h1 {
-        font-size: 35px;
-        padding-top: 6px;
-        width: 100%;
-    }
-    #intro {
-        background-position: 9% 67%;
-    }
-    #intro p {
-        width: 100%;
-    }
-    #contacto .izquierda, #contacto .derecha {
-        padding: 24px 29px;
-    }
-
-    @media (max-height:820px){
-        #intro p {
-            line-height: 31px;
-        }
-    }
-
-    @media (max-height: 700px){
-        #intro p {
-            margin-top: -18px;
-            line-height: 24px;
-        }
-    }
-
-}
-
-@media screen and (max-width: 400px) {
-
-    @media (max-height:640px){
-        #intro h1 {
-            font-size: 32px;
-        }
-        #intro p {
-            font-size: 16px;
-        }
-    }
-
-}
-
-@media screen and (max-width: 306px) {
-    #intro h1 {
-        font-size: 28px;
-    }
-    #intro p {
-        font-size: 14px;
-    }
-    #intro .botones a {
-        margin-right: 3px;
-    }
-    #menu {
-        height: 2400px;
-    }
-    #menu .contenedor {
-        height: 2400px;
-    }
-
-
-
 }
