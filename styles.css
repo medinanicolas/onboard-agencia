@@ -49,24 +49,26 @@ nav ul li a {
 #intro {
     background: url(imagenes/back.jpg);
     text-align: center;
-    min-height: 30vmax;
+    height: 30vw;
     background-size: cover;
     background-position: 57% 67%;
+    padding: 1vw
 }
 
 #intro h1 {
     font-family: 'Playfair Display';
-    font-size: 3.5vmax;
+    /*font-size: 3.5vmax;*/
+    font-size: 3vw;
     margin-top:-0.5vmax;
     color: #fff;
     font-weight: normal;
-    padding-top: 60px;
+    padding-top: 3vw;
 }
 
 #intro p {
     color: #bfbfbf;
     font-size: 1.5vmax;
-    line-height: 36px;
+    line-height: 4vw;
     width: 60%;
     margin: auto;
 }
@@ -102,6 +104,7 @@ nav ul li a {
 #our-story .contenedor {
     display: flex;
     justify-content: center;
+    margin-bottom: 60px;
 }
 
 .our-story {
@@ -109,12 +112,16 @@ nav ul li a {
     letter-spacing: 2px;
     font-weight: 700;
 }
-hr {
-    width: 40px;
-    float: left;
+hr{
     border-color: #c29d63;
 }
-
+#our-story .izquierda hr {
+    width: 40px;
+    float: left;
+}
+#our-story  hr {
+    width: 60%;
+}
 #our-story h2 , #testimonials h2{
     margin-top: 50px;
     font-size: 48px;
@@ -137,7 +144,7 @@ hr {
 
 #menu {
     background-color: #1f1f1f;
-    margin-bottom: 100px;
+    margin-bottom: 1vw;
 }
 
 #menu .foto {
@@ -178,6 +185,7 @@ hr {
     color: #939393;
     line-height: 30px;
     margin-top: 20px;
+    padding: 5px;
 }
 
 #menu .hongos {
