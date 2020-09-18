@@ -148,7 +148,7 @@ hr{
 }
 
 #menu .foto {
-    background: url(imagenes/cangrejo.png);
+    background: url(imagenes/hongos.png);
     width: 300px;
     height: 285px;
     background-repeat: no-repeat;
@@ -189,7 +189,7 @@ hr{
 }
 
 #menu .hongos {
-    background: url(imagenes/hongos.png);
+    background: url(imagenes/pez.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -198,7 +198,7 @@ hr{
 }
 
 #menu .pez {
-    background: url(imagenes/pez.png);
+    background: url(imagenes/cangrejo.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
