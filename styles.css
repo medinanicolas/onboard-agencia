@@ -586,3 +586,127 @@ footer p {
 
 
 }
+
+/* Galeria */
+#galeria {
+    max-width: 2200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    width: 95%;
+    margin: auto;
+    grid-gap: 10px;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+#galeria > a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0 0, 0.5);
+}
+
+#galeria img {
+    width: 100%;
+    vertical-align: top;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+#galeria a:hover img {
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.3);
+}
+
+.light-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.light-box img {
+    width: 75vw;
+    max-height: 70vh;
+}
+
+.light-box:target {
+    transform: scale(1);
+}
+
+.close{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: #c39d63;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+}  
+
+.next {
+    display: block;
+    background: #c29d62;
+    opacity: 0.8;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5 ease;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#galeria a:hover .overlay {
+    opacity: 1;
+}
+
+#lugares .contenedor{
+    margin-top: 12vh;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 11.3vh;
+}
+@media screen and (min-width: 1280px) {
+    #galeria img {
+        width: 100%;
+    }   
+    #galeria {
+        grid-template-columns: repeat(auto-fit, minmax(550px,1fr));
+    }
+
+}
