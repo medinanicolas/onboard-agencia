@@ -280,7 +280,7 @@ hr{
 
 #contacto .izquierda, #contacto .derecha {
     background: #1f1f1f;
-    padding: 77px 29px;   
+    padding: 29px 29px;   
 }
 
 #contacto .izquierda {
@@ -381,7 +381,7 @@ input[type="submit"] {
 }
 
 #contacto .derecha {
-    padding: 99px 0;
+    padding: 55px 29px;
     width: 40%;
 }
 
@@ -597,6 +597,7 @@ textarea {
 .google-maps {
     width: 90%;
     margin: auto;
+    margin-top: 30px;
     position: relative;
     padding-bottom: 75%;
     height: 0;
@@ -611,11 +612,11 @@ textarea {
 }
 /* Slideshow container */
 .slideshow-container {
-max-width: 90%;
-margin: auto;
-position: relative;
-margin: auto;
-margin-bottom: 4vh;
+    max-width: 145vh;
+    margin: auto;
+    position: relative;
+    margin: auto;
+    margin-bottom: 4vh;
 
 }
 
