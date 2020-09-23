@@ -355,6 +355,7 @@ input[type="text"] {
     padding: 15px;
     font-size: 16px;
     margin-bottom: 10px;
+    color: #fff;
 }
 
 ::placeholder {
@@ -397,6 +398,13 @@ footer p {
     padding-top: 28px;
 }
 
+#contacto .mensajes {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: red;
+    padding-top: 20px;
+}
 /* Galeria */
 #galeria {
     max-width: 2200px;
