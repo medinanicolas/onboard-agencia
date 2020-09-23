@@ -159,13 +159,16 @@
             <h3>Escribenos</h3>
             <p>No seas timido. ¡Dejanos saber si tienes alguna consulta!</p>
             <a href="">Contáctanos</a>
-            <h3 class="news">Nuestro Boletín</h3>
-            <p>El dialogo es escencial para cualquier comunicación</p>
-            <form action="">
-                <input type="text" placeholder="Primer Nombre">
-                <input type="text" placeholder="Apellidos">
-                <input type="text" placeholder="Email">
-                <input type="submit" value="Contáctanos">
+            <h3 class="news">Oferta primer viaje</h3>
+            <p>Pre-registrate a nuestra nueva plataforma y obtiene un descuento en tu primer viaje.</p>
+            <form id="form" method="POST">
+                <input id="nombre" type="text" placeholder="Primer Nombre" required>
+                <input id="apellido" type="text" placeholder="Apellidos" required>
+                <input id="correo" type="text" placeholder="Email" required>
+                <input id="telefono" type="text" placeholder="Telefono" onkeyup="formatnumber(this)" minlength="9" maxlength="9" required>
+                <input id="rut" type="text" placeholder="Rut" onkeyup="formatRut(this)" maxlength="12" required>
+                <input type="submit" value="Pre-registro">
+                <p class="mensajes" id="mensajes"></p>
             </form>
         </div>
     </div>
@@ -178,7 +181,7 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
 
-<!-- Script para el menu -->
+<!-- Script para el menu y el formulario-->
 <script src="script.js"></script>
 
 <footer>
