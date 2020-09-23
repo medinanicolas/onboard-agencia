@@ -154,3 +154,5 @@ function validarRut(rut){
   }
 
 }
+
+// carousel

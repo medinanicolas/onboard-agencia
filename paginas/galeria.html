@@ -6,6 +6,7 @@
     <title>Galeria</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../media.css">
+    <link rel="icon" type="image/png" href="../imagenes/logoontour.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -23,7 +24,7 @@
                     <li><a href="../paginas/galeria.html">Galeria</a></li>
                     <li><a href="">Reservas</a></li>
                     <li><a href="">Equipo</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="../paginas/contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,7 +33,11 @@
 
 <section id="lugares">
     <div class="contenedor">
+
         <h1>GALERIA DE DESTINOS</h1>
+
+        <hr class="subtitulos">
+
     </div>
 </section>
 
@@ -105,6 +110,69 @@
     <a href="#imagen1" class="next" ><i class="fas fa-arrow-right"></i></a>
     <a href="" class="close">x</a>
 </article>
+
+<section id="lugares">
+    <div class="contenedor">
+        <h1>Slideshow</h1>
+        <hr class="subtitulos">
+    </div>
+</section>
+<div class="slideshow-container">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="../imagenes/slider1.jpg" style="width:100%">
+      <div class="text">Brazil</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="../imagenes/slider2.jpg" style="width:100%">
+      <div class="text">Patagonia</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="../imagenes/slider3.jpg" style="width:100%">
+      <div class="text">Piramide</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="../imagenes/slider4.jpg" style="width:100%">
+        <div class="text">Machu Picchu</div>
+      </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+    </script>
 
 <!-- Jquery -->
 <script
