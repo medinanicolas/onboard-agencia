@@ -206,6 +206,10 @@ hr{
     right: -13px;
 }
 
+#menu h2 {
+    display: none;
+}
+
 #menu .contenedor {
     max-width: 1130px;
 }
@@ -341,7 +345,7 @@ ul#tercero {
 }
 
 #contacto h3.news {
-    margin-top: 67px;
+    margin-top: 0px;
 }
 
 #contacto form {
@@ -425,6 +429,9 @@ footer p {
     box-shadow: 0 0 6px rgba(0,0 0, 0.5);
 }
 
+#galeria h2{
+    display: none;
+}
 #galeria img {
     width: 100%;
     vertical-align: top;

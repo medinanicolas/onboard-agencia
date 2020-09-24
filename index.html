@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
     <title>OnBoard Inicio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
+    <link rel="icon" type="image/png" href="../imagenes/logoontour.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -60,6 +61,7 @@
 </section>
 
 <section id="menu">
+    <h2>1</h2>
     <div class="contenedor">
 
         <div class="linea1">
@@ -159,8 +161,8 @@
             <h3 class="news">OFERTA PRIMER VIAJE</h3>
             <p>Registrate ahora a nuestra nueva plataforma y obtiene un descuento de un 15% en tu primer viaje!</p>
             <form id="form" method="POST">
-                <input id="nombre" type="text" placeholder="Primer Nombre" required>
-                <input id="apellido" type="text" placeholder="Apellidos" required>
+                <input id="nombre" type="text" placeholder="Primer Nombre" onkeyup="formatNombre(this)" required>
+                <input id="apellido" type="text" placeholder="Apellidos" onkeyup="formatApellido(this)" required>
                 <input id="correo" type="text" placeholder="Email" required>
                 <input id="telefono" type="text" placeholder="Telefono" onkeyup="formatnumber(this)" minlength="9" maxlength="9" required>
                 <input id="rut" type="text" placeholder="Rut" onkeyup="formatRut(this)" maxlength="12" required>
@@ -169,7 +171,7 @@
             </form>
             <h3>O Escribenos</h3>
             <p>¡Dejanos saber si tienes alguna consulta!</p>
-            <a href="">Contáctanos</a>
+            <a href="paginas/contacto.html">Contáctanos</a>
         </div>
     </div>
 </section>
@@ -182,7 +184,9 @@
   crossorigin="anonymous"></script>
 
 <!-- Script para el menu y el formulario-->
-<script src="script.js"></script>
+<script src="js/script.js"></script>
+
+<script src="js/boton.js"></script>
 
 <footer>
     <p>EL Duo de la Historia 2020</p>

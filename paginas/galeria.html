@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
     <title>Galeria</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../media.css">
+    <link rel="icon" type="image/png" href="../imagenes/logoontour.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -45,24 +46,24 @@
     
     <div class="mySlides fade">
       <div class="numbertext">1 / 4</div>
-      <img src="../imagenes/slider1.jpg" style="width:100%">
+      <img src="../imagenes/slider1.jpg" alt="imagenbonita" style="width:100%">
       <div class="text">Brazil</div>
     </div>
     
     <div class="mySlides fade">
       <div class="numbertext">2 / 4</div>
-      <img src="../imagenes/slider2.jpg" style="width:100%">
+      <img src="../imagenes/slider2.jpg" alt="imagenbonita2" style="width:100%">
       <div class="text">Patagonia</div>
     </div>
     
     <div class="mySlides fade">
       <div class="numbertext">3 / 4</div>
-      <img src="../imagenes/slider3.jpg" style="width:100%">
+      <img src="../imagenes/slider3.jpg" alt="imagenbonita3" style="width:100%">
       <div class="text">Piramide</div>
     </div>
     <div class="mySlides fade">
         <div class="numbertext">4 / 4</div>
-        <img src="../imagenes/slider4.jpg" style="width:100%">
+        <img src="../imagenes/slider4.jpg" alt="imagenbonita4" style="width:100%">
         <div class="text">Machu Picchu</div>
       </div>
     
@@ -100,32 +101,33 @@
 
 
 <section id="galeria">
-        <a href="#imagen1"><img src="../imagenes/imagen1.jpg" alt="">
+        <h2>2</h2>
+        <a id="1" href="#imagen1"><img src="../imagenes/imagen1.jpg" alt="">
         <div class="overlay">
             <div class="content">Buceo con dragones</div>
         </div>
         </a>
-        <a href="#imagen2"><img src="../imagenes/imagen2.jpg" alt="">
+        <a id="2" href="#imagen2"><img src="../imagenes/imagen2.jpg" alt="">
             <div class="overlay">
                 <div class="content">Playa nudista</div>
             </div>
         </a>
-        <a href="#imagen3"><img src="../imagenes/imagen3.jpg" alt="">
+        <a id="3" href="#imagen3"><img src="../imagenes/imagen3.jpg" alt="">
         <div class="overlay">
                 <div class="content">Puente al inframundo</div>
             </div>
         </a>
-        <a href="#imagen4"><img src="../imagenes/imagen4.jpeg" alt="">
+        <a id="4" href="#imagen4"><img src="../imagenes/imagen4.jpeg" alt="">
         <div class="overlay">
                 <div class="content">Pecho de Vidal</div>
             </div>
         </a>
-        <a href="#imagen5"><img src="../imagenes/imagen5.jpg" alt="">
+        <a id="5" href="#imagen5"><img src="../imagenes/imagen5.jpg" alt="">
         <div class="overlay">
                 <div class="content">Machu picchu</div>
             </div>
         </a>
-        <a href="#imagen6"><img src="../imagenes/imagen6.jpg" alt="">
+        <a id="6" href="#imagen6"><img src="../imagenes/imagen6.jpg" alt="">
         <div class="overlay">
                 <div class="content">Alma atacama</div>
             </div>
@@ -133,40 +135,46 @@
 </section>
 
 <article class="light-box" id="imagen1">
+    <h2>1</h2>
     <a href="#imagen6" class="next"><i class="fas fa-arrow-left"></i></a>
     <img src="../imagenes/imagen1.jpg" alt="">
     <a href="#imagen2" class="next" ><i class="fas fa-arrow-right"></i></a>
-    <a href="" class="close">x</a>
+    <a href="#1" class="close">x</a>
 </article>
 <article class="light-box" id="imagen2">
+    <h2>1</h2>
     <a href="#imagen1" class="next"><i class="fas fa-arrow-left"></i></a>
     <img src="../imagenes/imagen2.jpg" alt="">
     <a href="#imagen3" class="next" ><i class="fas fa-arrow-right"></i></a>
-    <a href="" class="close">x</a>
+    <a href="#2" class="close">x</a>
 </article>
 <article class="light-box" id="imagen3">
+    <h2>1</h2>
     <a href="#imagen2" class="next"><i class="fas fa-arrow-left"></i></a>
     <img src="../imagenes/imagen3.jpg" alt="">
     <a href="#imagen4" class="next" ><i class="fas fa-arrow-right"></i></a>
-    <a href="" class="close">x</a>
+    <a href="#3" class="close">x</a>
 </article>
 <article class="light-box" id="imagen4">
+    <h2>1</h2>
     <a href="#imagen3" class="next"><i class="fas fa-arrow-left"></i></a>
     <img src="../imagenes/imagen4.jpeg" alt="">
     <a href="#imagen5" class="next" ><i class="fas fa-arrow-right"></i></a>
-    <a href="" class="close">x</a>
+    <a href="#4" class="close">x</a>
 </article>
 <article class="light-box" id="imagen5">
+    <h2>1</h2>
     <a href="#imagen4" class="next"><i class="fas fa-arrow-left"></i></a>
     <img src="../imagenes/imagen5.jpg" alt="">
     <a href="#imagen6" class="next" ><i class="fas fa-arrow-right"></i></a>
-    <a href="" class="close">x</a>
+    <a href="#5" class="close">x</a>
 </article>
 <article class="light-box" id="imagen6">
+    <h2>1</h2>
     <a href="#imagen5" class="next"><i class="fas fa-arrow-left"></i></a>
-    <img src="../imagenes/imagen6.jpg" alt="" t> 
+    <img src="../imagenes/imagen6.jpg" alt=""> 
     <a href="#imagen1" class="next" ><i class="fas fa-arrow-right"></i></a>
-    <a href="" class="close">x</a>
+    <a href="#6" class="close">x</a>
 </article>
 
 <!-- Jquery -->
@@ -176,10 +184,11 @@
   crossorigin="anonymous"></script>
 
 <!-- Script para el menu -->
-<script src="../script.js"></script>
-
-
+<script src="../js/boton.js"></script>
 <footer>
     <p>EL Duo de la Historia 2020</p>
+</footer>
+
+
 </body>
 </html>

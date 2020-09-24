@@ -1,13 +1,3 @@
-// Función Boton menu responsivo
-$(document).ready(function(){
-
-
-$('.menu-icon').on('click', function(){
-  $('nav').slideToggle();
-})
-
-})
-
 // Validar formulario
 const nombre = document.getElementById('nombre')
 const apellido = document.getElementById('apellido')
@@ -60,7 +50,6 @@ form.addEventListener("submit", e=>{
   if (!entrar) {
     alert('Formulario enviado correctamente')
     location.reload();
-
   }
 })
 
@@ -76,6 +65,15 @@ function formatnumber(numero){
   numero.value=numero.value.replace(/[^0-9k]+/g, '')
 }
 
+//formatear nombre
+function formatNombre(texto){
+  texto.value=texto.value.replace(/[^A-Za-z]+/g, '')
+}
+
+//formatear apellido
+function formatApellido(texto){
+  texto.value=texto.value.replace(/[^A-Za-z ]+/g, '')
+}
 
 // funcion rut valido
 
@@ -154,5 +152,3 @@ function validarRut(rut){
   }
 
 }
-
-// carousel
