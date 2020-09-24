@@ -47,7 +47,7 @@ nav ul li a {
 /* INTRO  */
 
 #intro {
-    background: url(imagenes/back.jpg);
+    background: url(../imagenes/back.jpg);
     text-align: center;
     height: 30vw;
     background-size: cover;
@@ -148,7 +148,7 @@ hr{
 }
 
 #menu .foto {
-    background: url(imagenes/hongos.png);
+    background: url(../imagenes/hongos.png);
     width: 300px;
     height: 285px;
     background-repeat: no-repeat;
@@ -189,7 +189,7 @@ hr{
 }
 
 #menu .hongos {
-    background: url(imagenes/pez.png);
+    background: url(../imagenes/pez.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -198,7 +198,7 @@ hr{
 }
 
 #menu .pez {
-    background: url(imagenes/cangrejo.png);
+    background: url(../imagenes/cangrejo.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -271,7 +271,7 @@ hr{
 /* CONTACTO  */
 
 #contacto {
-    background: url(imagenes/restaurant.jpg);
+    background: url(../imagenes/restaurant.jpg);
     color: #fff;
     text-align: center;
     padding: 90px 0;
