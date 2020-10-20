@@ -1,8 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from django.views import generic
-
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from .forms import RegistrarUsuario
 from .models import Header, Nosotros, Post
 #from django.template import loader
 
@@ -14,3 +12,12 @@ def index(request):
 
     context = {'header':header, 'nosotros':nosotros, 'post':post}
     return render(request, 'onboardwebsite/index.html', context)
+
+def registro(request):
+    if request.method=="POST":
+        form = RegistrarUsuario(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = RegistrarUsuario()
+    return render(request, 'onboardwebsite/registro.html', {'form':form})

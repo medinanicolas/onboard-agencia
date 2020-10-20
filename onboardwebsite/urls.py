@@ -5,4 +5,5 @@ from . import views
 app_name = "onboardwebsite"
 urlpatterns = [
     path('', views.index, name='index'),
+    path('registro/', views.registro, name='registro'),
 ]

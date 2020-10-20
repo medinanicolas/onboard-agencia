@@ -1,0 +1,11 @@
+{% extends 'onboardwebsite/base.html' %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'onboardwebsite/css/registro.css' %}"
+    <h2>Registro de usuarios</h2>
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Registrar</button>
+    </form> 
+{% endblock %}
