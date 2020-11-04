@@ -1,0 +1,35 @@
+#contenido {
+    width: 90%;
+    margin:auto;
+    min-height: 100vh;
+    
+}
+hr{
+    border-color: #c29d63;
+}
+input[type=text], input[type=email],
+input[type=number], select, textarea {
+
+    width: 100%;
+    padding: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+.button {
+    padding:5px 10px;
+    color: white;
+    background-color: #2B6CB0;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/*Tablets*/
+@media (max-width: 1024px) {
+    .formulario_contacto {
+        width: 100%;
+    }
+}

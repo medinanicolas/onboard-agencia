@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,17 @@
     {% endblock %}
 {% block content %}
 {% load static %}
+=======
+{% extends "onboardwebsite/base.html" %}
+
+{% load static %}
+    {% load crispy_forms_tags %}
+    {% load static %}
+    {% block titulo %}
+        <title>Registro de usuarios</title>
+    {% endblock %}
+    {% block content %}
+>>>>>>> 5daad20601014add3278f9a47806c5b5818ad037
     <div class="container">
         <br>
         <br>
@@ -22,14 +34,22 @@
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Registro de usuario</h2>
+                        <h1>Registro de usuarios</h1>
                         <hr>
                         <form action="" method="post">
+                            
                             {% csrf_token %}
+<<<<<<< HEAD
                             {{ form | crispy }}
                             <a href="{% url 'onboardwebsite:inicio' %}">inicio</a> |
                             <a href="{% url 'login' %}">iniciar sesión</a>
                             <input type="submit" value="ingresar" class="btn btn-success float-right">
+=======
+                            {{ form | crispy}}
+                            <a href="{% url 'onboardwebsite:index' %}">Ir al Inicio</a> |
+                            <a href="{% url 'login' %}">Iniciar sesion</a>
+                            <input type="submit" value="Ingresar" class="btn btn-secondary float-right" style="background-color: #c39d63;color: white;">
+>>>>>>> 5daad20601014add3278f9a47806c5b5818ad037
                         </form>
                     </div>
                 </div>
@@ -40,11 +60,21 @@
     <br>
     <br>
     <br>
+<<<<<<< HEAD
     <br>
     <br>
+=======
+>>>>>>> 5daad20601014add3278f9a47806c5b5818ad037
     <style>
         body {
           background-image: url("{% static 'onboardwebsite/imagenes/back.jpg' %}");
         }
+<<<<<<< HEAD
     </style>
 {% endblock %}
+=======
+        
+        </style>
+
+    {% endblock %}
+>>>>>>> 5daad20601014add3278f9a47806c5b5818ad037
