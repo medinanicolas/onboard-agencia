@@ -1,14 +1,54 @@
-{% extends 'onboardwebsite/base.html' %}
-{% block content %}
-    <h2>¡Contactanos!</h2>
-    <form action="" class="" method="post">
+{% extends "onboardwebsite/base.html" %}
 
-    {% csrf_token %}
+{% load static %}
+  {% block titulo %}
+  <title>Contacto</title>
 
-    {{ form }}
+  {% endblock %}
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'onboardwebsite/css/contacto.css' %}">
+  {% endblock %}
 
-    <br>
-    <input type="submit" id="" class="">Enviar</input>
-    </form>
-    {{ mensaje }}
+  {% block content %}
+  
+  {% load crispy_forms_tags %}
+  <div id="contenido">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-12 col-md-6 offset-md-3">
+            <div class="card" style="z-index:1">
+              <div class="card-body">
+                <h1>¡Contactanos!</h1>
+                <hr>
+                <form action="" class="" method="post">
+
+                    {% csrf_token %}
+
+                    {{ form | crispy}}
+
+                    <br>
+                    <input type="submit" value="Enviar" class="btn btn-seondary btn-lg btn-block" style="background-color: #c39d63;">
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <table id="tablacontactos">
+        
+    </table>
+
+
+</div>
+<style>
+    body {
+      background-image: url("{% static 'onboardwebsite/imagenes/back.jpg' %}");
+    }
+    
+    </style>
+
+
 {% endblock %}

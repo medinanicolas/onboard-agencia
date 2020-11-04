@@ -1,0 +1,155 @@
+{% extends 'onboardwebsite/base.html' %}
+{%block content %}
+    {% load static %}
+    <section id="intro">
+        <div class="contenedor">
+            <div class="contenedor-titulo">
+                <div class="titulo">
+                    <h1>{{ header.titulo_text }}</h1>
+                    <p>{{ header.subtitulo_text }}</p>
+                    <div class="botones">
+                        <a href="#menu" class="menu">Ver planes</a>
+                        <a href="#reservas" class="reservation">Reservas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-story">
+        <div class="contenedor">
+            <div class="izquierda">
+                <p class="our-story">Nosotros</p>
+                <hr>
+                <h2>{{ nosotros.nosotros_text}}</h2>
+                <p class="texto">{{ nosotros.descripcion_text }}
+                <p class="texto">¡No te quedes abajo! Ven con nosotros y disfruta de tu mejor destino.</p>
+            </div>
+            <div class="derecha">
+                <img src="{{ nosotros.nosotros_image.url }}"/>
+            </div>
+        </div>
+        <hr>
+    </section>
+    {% load humanize %}
+    <section id="menu">
+        <h2>1</h2>
+        <div class="contenedor">
+
+            <div class="linea1">
+
+                <div id="primero" class="texto">
+                    <ul>
+                        <li class="precio">desde US${{ post.precio_int1 | intcomma  }}</li>
+                        <li class="titulo">{{ post.post_text1 }}</li>
+                        <li class="parrafo">{{ post.descripcion_text1 }}</li>
+                    </ul>
+                </div>
+                <div>
+                    <img class="foto" src="{{ post.post_image1.url}}">
+                </div>
+                <div id="texto-2" class="texto">
+                    <ul>
+                        <li class="precio">desde US${{ post.precio_int1 | intcomma  }}</li>
+                        <li class="titulo">{{ post.post_text1 }}</li>
+                        <li class="parrafo">{{ post.descripcion_text1 }}</li>
+                    </ul>
+                </div> 
+
+            </div>
+
+            <div class="linea2">
+                <img class="foto hongos" src="{{ post.post_image2.url }}"">
+                <div id="ultimo" class="texto"  style="width: 30%;">
+                    <ul>
+                        <li class="precio">desde US${{ post.precio_int1 | intcomma  }}</li>
+                        <li class="titulo">{{ post.post_text1 }}</li>
+                        <li class="parrafo">{{ post.descripcion_text1 }}</li>
+                    </ul>
+                </div>
+                <img class="foto pez" src="{{ post.post_image3.url }}"">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="contenedor">
+            <p class="titulo">Testimonios</p>
+            <hr>
+            <h2>Qué Opinan Nuestros Clientes</h2>
+            <div class="contenedor-testimonials">
+                <div class="testimonial">
+                    <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="5">
+                    <h3>“Excelente. Muy recomendado!”</h3>
+                    <p class="texto">“Excelente atención. Mucha amabilidad y empatía, full recomendado para descansar un ratito junto a tu familia. Ma-ra-vi-llo-so.“
+                    </p>
+                    <p class="nombre">Leandra</p>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="5">
+                    <h3>“Muy buena experiencia”</h3>
+                    <p class="texto">“Casi me comen los canibales pero como buen futre que soy fui protegido por el brazo armado del capitalismo. Excelente servicio!“
+                    </p>
+                    <p class="nombre">Maximiliano Angelini Angelini</p>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="5">
+                    <h3>“Precio y calidad</h3>
+                    <p class="texto">“Muy accesible, me sentí como nunca antes.“
+                    </p>
+                    <p class="nombre">José</p>
+                </div>
+                <div class="testimonial">
+                    <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="5">
+                    <h3>“Espectacular”</h3>
+                    <p class="texto">“Recomiendo OnBoard 100% en un link.“
+                    </p>
+                    <p class="nombre">Bot Martinez</p>
+                </div>
+            </div>
+            <!--AQUI QUITAR UN POCO DE MARGIN BOTTOM-->
+            <!--Y HACER QUE SOLOS LOS USUARIOS REGISTRADOS PUEDAN CALIFICAR-->
+            <a href='experiencias'>Cuentanos tu experiencia!</a> 
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="contenedor">
+            <div class="izquierda">
+                <h2>Horas de Atención</h2>
+                <ul>
+                    <li>LUN – VIE</li>
+                    <li>10:00am – 1:00pm</li>
+                    <li>4:00pm – 6:30pm</li>
+                </ul>
+                <ul>
+                    <li>SAB</li>
+                    <li>3:00pm – 6:30pm</li>
+                </ul>
+                <ul id="tercero">
+                    <li>DOM</li>
+                    <li>Estamos cerrados</li>
+                </ul>
+                <a href="">HAZ UNA RESERVA</a>
+
+            </div>
+            <div class="derecha">
+                <h3 class="news">OFERTA PRIMER VIAJE</h3>
+                <p>Registrate ahora a nuestra nueva plataforma y obtiene un descuento de un 15% en tu primer viaje!</p>
+                <form id="form" method="POST">
+                    <input id="nombre" type="text" placeholder="Primer Nombre" onkeyup="formatNombre(this)" required>
+                    <input id="apellido" type="text" placeholder="Apellidos" onkeyup="formatApellido(this)" required>
+                    <input id="correo" type="text" placeholder="Email" required>
+                    <input id="telefono" type="text" placeholder="Telefono" onkeyup="formatnumber(this)" minlength="9" maxlength="9" required>
+                    <input id="rut" type="text" placeholder="Rut" onkeyup="formatRut(this)" maxlength="12" required>
+                    <input type="submit" value="Registro">
+                    <p class="mensajes" id="mensajes"></p>
+                </form>
+                <h3>O Escribenos</h3>
+                <p>¡Dejanos saber si tienes alguna consulta!</p>
+                <a href="{% url 'onboardwebsite:contacto' %}">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
