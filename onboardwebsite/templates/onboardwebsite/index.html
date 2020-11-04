@@ -31,7 +31,7 @@
         </div>
         <hr>
     </section>
-
+    {% load humanize %}
     <section id="menu">
         <h2>1</h2>
         <div class="contenedor">
@@ -40,7 +40,7 @@
 
                 <div id="primero" class="texto">
                     <ul>
-                        <li class="precio">desde US${{ post.precio_int1 }}</li>
+                        <li class="precio">desde US${{ post.precio_int1 | intcomma  }}</li>
                         <li class="titulo">{{ post.post_text1 }}</li>
                         <li class="parrafo">{{ post.descripcion_text1 }}</li>
                     </ul>
@@ -50,7 +50,7 @@
                 </div>
                 <div id="texto-2" class="texto">
                     <ul>
-                        <li class="precio">desde US${{ post.precio_int1 }}</li>
+                        <li class="precio">desde US${{ post.precio_int1 | intcomma  }}</li>
                         <li class="titulo">{{ post.post_text1 }}</li>
                         <li class="parrafo">{{ post.descripcion_text1 }}</li>
                     </ul>
@@ -62,7 +62,7 @@
                 <img class="foto hongos" src="{{ post.post_image2.url }}"">
                 <div id="ultimo" class="texto"  style="width: 30%;">
                     <ul>
-                        <li class="precio">desde US${{ post.precio_int1 }}</li>
+                        <li class="precio">desde US${{ post.precio_int1 | intcomma  }}</li>
                         <li class="titulo">{{ post.post_text1 }}</li>
                         <li class="parrafo">{{ post.descripcion_text1 }}</li>
                     </ul>
@@ -148,7 +148,7 @@
                 </form>
                 <h3>O Escribenos</h3>
                 <p>¡Dejanos saber si tienes alguna consulta!</p>
-                <a href="paginas/contacto.html">Contáctanos</a>
+                <a href="{% url 'onboardwebsite:contacto' %}">Contáctanos</a>
             </div>
         </div>
     </section>

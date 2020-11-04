@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import RegistrarUsuario
+from .forms import RegistrarUsuario, ContactoUsuario
 from .models import Header, Nosotros, Post
 #from django.template import loader
 
@@ -21,3 +21,15 @@ def registro(request):
     else:
         form = RegistrarUsuario()
     return render(request, 'onboardwebsite/registro.html', {'form':form})
+def contacto(request):
+    data = {
+        "form" : ContactoUsuario()
+    }
+    if request.method == "POST":
+        formulario = ContactoUsuario(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Contacto enviado"
+        else:
+            data["form"] = formulario
+    return render(request, 'onboardwebsite/contacto.html', data)

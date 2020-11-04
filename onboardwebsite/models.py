@@ -43,3 +43,10 @@ class Post(models.Model):
     Soon: Hacer un modelo de experiencias con usuarios registrados
     Para eso hacer login con sesiones
     """
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=25)
+    apellidos = models.CharField(max_length=50)
+    email = models.EmailField(max_length=30)
+    mensaje = models.TextField(max_length=350)
+    def __str__(self):
+        return self.nombre

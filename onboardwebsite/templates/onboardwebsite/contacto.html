@@ -1,0 +1,14 @@
+{% extends 'onboardwebsite/base.html' %}
+{% block content %}
+    <h2>¡Contactanos!</h2>
+    <form action="" class="" method="post">
+
+    {% csrf_token %}
+
+    {{ form }}
+
+    <br>
+    <input type="submit" id="" class="">Enviar</input>
+    </form>
+    {{ mensaje }}
+{% endblock %}
