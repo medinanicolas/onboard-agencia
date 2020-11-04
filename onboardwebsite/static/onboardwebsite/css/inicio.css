@@ -1,0 +1,260 @@
+/* INTRO  */
+
+#intro {
+    background: url(../imagenes/back.jpg);
+    text-align: center;
+    height: 50%;
+    background-size: cover;
+    background-position: 57% 67%;
+}
+
+#intro h1 {
+    font-size: 40px;
+    margin-top:-0.5vmax;
+    color: #fff;
+    font-weight: normal;
+    padding-top: 3vw;
+}
+
+#intro p {
+    color: #bfbfbf;
+    font-size: 20px;
+    line-height: 4vw;
+    width: 60%;
+    margin: auto;
+}
+
+#intro .planes {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 9px;
+    background: transparent;
+}
+
+#intro .reservation {
+    color: #fff;
+    padding: 9px;
+    background: #c39d63;
+}
+
+#intro .botones {
+    margin-top: 50px;
+}
+
+#intro .botones a {
+    margin-right: 20px;
+    padding: 9px 23px;
+}
+
+/* Nosotros */
+
+#nosotros {
+    padding: 90px 0;
+}
+
+#nosotros .contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.nosotros {
+    color: #bfbfbf;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+hr{
+    border-color: #c29d63;
+}
+#nosotros .izquierda hr {
+    width: 40px;
+    float: left;
+}
+#nosotros  hr {
+    width: 60%;
+}
+#nosotros h2 , #testimonials h2{
+    margin-top: 50px;
+    font-size: 48px;
+    font-family: 'Playfair Display';
+    font-weight: 300;
+}
+
+#nosotros .texto, .testimonial .texto {
+    font-size: 17px;
+    color: #939393;
+    line-height: 30px;
+    width: 88%;
+}
+
+#nosotros .izquierda{
+    width: 45%;
+}
+
+/* MENU  */
+
+
+#menu .titulo {
+    text-align: left;
+    color: #bfbfbf;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+#menu li {
+    list-style: none;
+}
+
+#menu .precio {
+    color: #c29d62;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#menu .titulo {
+    font-family: 'Playfair Display';
+    font-size: 24px;
+    font-weight: 100;
+}
+
+#menu .parrafo {
+    color: #939393;
+    line-height: 30px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+
+
+#menu h2 {
+    display: none;
+}
+
+#menu .contenedor {
+    max-width: 1130px;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* TESTIMONIALS */
+
+#testimonials {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 90px 0;
+}
+
+#testimonials .titulo {
+    text-align: left;
+    color: #bfbfbf;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+#testimonials hr {
+    width: 40px;
+    float: none;
+    font-weight: 700;
+}
+
+.contenedor-testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.testimonial {
+    width: 25%;
+    text-align: left;
+}
+
+.testimonial img {
+    width: 55%;
+}
+
+#testimonials .contenedor{
+    max-width: 1150px;
+}
+
+@media screen and (max-width: 850px) {
+    #intro{
+        padding: 25px;
+        height: 60%;
+    }
+    #intro h1{
+        font-size: 50px;
+    }
+    #intro p{
+        font-size: 20px;
+        line-height: 20px;
+    }
+    #nosotros .contenedor {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    #nosotros .texto {
+        margin-bottom: 50px;
+    }
+    
+    #nosotros .izquierda {
+        width: 90%;
+    }
+    #nosotros .derecha img {
+        width: 100%;
+    }
+    .contenedor-testimonials {
+        flex-direction: column;
+    }
+    .testimonial {
+        width: 100%;
+    }
+    .testimonial img{
+        width: 40vw;
+    }
+    #contacto .contenedor {
+        flex-direction: column;
+    }
+    #testimonials h2 {
+        font-size: 40px;
+    }
+    @media screen and (max-height: 800px) {
+        #intro{
+            height: 75%;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    #intro{
+        height: 42%;
+    }
+    #intro h1{
+        font-size: 30px;
+    }
+    #intro p{
+        font-size: 15px;
+    }
+    @media screen and (max-height: 800px) {
+        #intro{
+            height: 75%;
+        }
+    }
+}
+
+@media screen and (max-width: 350px){
+    #intro{
+        height: 75%;
+    }
+    #intro .botones a {
+        margin-right: 15px;
+        padding: 9px 9px;
+    }
+    @media screen and (max-height: 800px) {
+        #intro{
+            height: 75%;
+        }
+    }
+}

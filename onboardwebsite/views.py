@@ -30,7 +30,7 @@ def contacto(request):
 def registro(request):
     if request.user.is_authenticated:
         messages.error(request, "Ya estás registrado")
-        return redirect(to="onboardwebsite:index")
+        return redirect(to="onboardwebsite:index") 
     data = {
         "form":RegistrarUsuario()
     }
