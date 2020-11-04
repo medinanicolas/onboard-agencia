@@ -352,7 +352,7 @@ ul#tercero {
     margin-top: 25px;
 }
 
-input[type="text"] {
+#contacto input[type="text"] {
     width: 72%;
     border: 0;
     background: #111111;
@@ -369,7 +369,7 @@ input[type="text"] {
     color: #cdcdcd;
 }
 
-input[type="submit"] {
+#contacto input[type="submit"] {
     display: block;
     width: 78%;
     margin: auto;
@@ -590,7 +590,7 @@ hr{
 #formulario-contacto .izquierda{
     width: 45%;
 }
-textarea {
+#contacto textarea {
     width: 72%;
     border: 0;
     background: #111111;
@@ -598,6 +598,9 @@ textarea {
     font-size: 16px;
     margin-bottom: 10px;
     color: #fff;
+    resize: none;
+}
+textarea {
     resize: none;
 }
 
