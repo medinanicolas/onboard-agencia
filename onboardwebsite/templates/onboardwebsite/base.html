@@ -35,8 +35,9 @@
 </header>
 <!-- Content -->
 {%block content%}
-{%endblock%}
 
+{%endblock%}
+    
 <!-- Jquery -->
 <script
 src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -46,7 +47,19 @@ crossorigin="anonymous"></script>
 <!-- Script para el menu y el formulario-->
 <script src="{% static 'onboardwebsite/js/script.js' %}"></script>
 
-<script src="{% static 'onboardwebsite/js/boton.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+{% if messages %}
+    {% for m in messages %}
+        <script>
+            swal.fire({
+                "title": "Acción Terminada",
+                "text": "{{m}}",
+                "icon": "success"
+            })
+        </script>
+    {% endfor %}
+{% endif %}
 <footer>
     <p>EL Duo de la Historia 2020</p>
 </footer>

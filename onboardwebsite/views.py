@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, HttpResponse,redirect,get_object_or_404
 from django.contrib.auth import login, authenticate
 from .forms import RegistrarUsuario, ContactoUsuario
 from .models import Header, Nosotros, Post
+from django.contrib import messages
 #from django.template import loader
 
 # Configurar todas las vistas del website -> luego agregarlas a urls.py
@@ -29,7 +30,7 @@ def contacto(request):
         formulario = ContactoUsuario(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "Contacto enviado"
+            messages.success(request,"Formulario enviado")
         else:
             data["form"] = formulario
     return render(request, 'onboardwebsite/contacto.html', data)
