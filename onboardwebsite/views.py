@@ -14,14 +14,6 @@ def index(request):
     context = {'header':header, 'nosotros':nosotros, 'post':post}
     return render(request, 'onboardwebsite/index.html', context)
 
-def registro(request):
-    if request.method=="POST":
-        form = RegistrarUsuario(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = RegistrarUsuario()
-    return render(request, 'onboardwebsite/registro.html', {'form':form})
 def contacto(request):
     data = {
         "form" : ContactoUsuario()
@@ -34,3 +26,23 @@ def contacto(request):
         else:
             data["form"] = formulario
     return render(request, 'onboardwebsite/contacto.html', data)
+
+def registro(request):
+    if request.user.is_authenticated:
+        messages.error(request, "Ya estás registrado")
+        return redirect(to="onboardwebsite:index")
+    data = {
+        "form":RegistrarUsuario()
+    }
+    if request.method=="POST":
+        formulario = RegistrarUsuario(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request, "Te has registrado correctamente")
+            return redirect(to="onboardwebsite:index")
+        data["form"] = formulario
+    else:
+        formulario = RegistrarUsuario()
+    return render(request, 'registration/registro.html', data)

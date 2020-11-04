@@ -1,4 +1,3 @@
-
 {% extends 'onboardwebsite/base.html' %}
 {% block titulo %}
     <title>Iniciar sesión</title>
@@ -19,8 +18,8 @@
                         <form action="" method="post">
                             {% csrf_token %}
                             {{ form | crispy }}
-                            <a href="{% url 'onboardwebsite:index' %}">inicio</a>
-                            <!--<a href="{% url 'onboardwebsite:registro' %}">registro</a>-->
+                            <a href="{% url 'onboardwebsite:index' %}">inicio</a> |
+                            <a href="{% url 'onboardwebsite:registro' %}">registro</a>
                             <input type="submit" value="ingresar">
                         </form>
                     </div>

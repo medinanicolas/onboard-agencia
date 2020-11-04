@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingreso al sistema</title>
-</head>
-<body>
-    {% load crispy_forms_tags %}
+{% extends 'onboardwebsite/base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}
+        <title>Registro de usuario</title>
+    {% endblock %}
+{% block content %}
+{% load static %}
     <div class="container">
         <br>
         <br>
@@ -15,20 +13,22 @@
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Ingresa tus credenciales</h2>
+                        <h2>Registro de usuario</h2>
                         <hr>
                         <form action="" method="post">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <a href="{% url 'onboardwebsite:index' %}">inicio</a>
-                            <a href="{% registro ''">registro</a>
-                            <input type="submit" value="ingresar">
+                            <input type="submit" value="ingresar" class="btn btn-success float-right">
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-</body>
-</html>
+    <style>
+        body {
+          background-image: url("{% static 'onboardwebsite/imagenes/back.jpg' %}");
+        }
+    </style>
+{% endblock %}
