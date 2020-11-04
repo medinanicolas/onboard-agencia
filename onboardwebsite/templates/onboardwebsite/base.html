@@ -40,67 +40,6 @@
 
 
     {% endblock %}
-    
-<header>
-    <div class="menu">
-        <div class="contenedor">
-            <p class="logo">OnBoard</p>
-            <img src="{% static 'onboardwebsite/imagenes/menu.png' %}" class="menu-icon" alt="">
-            <nav>
-                <ul>
-                    <li><a href="{% url 'onboardwebsite:index' %}">inicio</a></li>
-                    <li><a href="{% url 'onboardwebsite:galeria' %}">galeria</a></li>
-                    <li><a href="{% url 'onboardwebsite:reservas' %}">reservas</a></li>
-                    <li><a href="{% url 'onboardwebsite:contacto' %}">contacto</a></li>
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'logout' %}">cerrar sesión</a>
-                    </li>
-                    <li><a href="#">@{{ user.username }}</a></li>
-                    {% else %}
-                    <li>
-                        <a href="{% url 'login' %}">usuarios</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </li>
-        </ul>
-            <div class="b-footer">
-            <p>OnBoard 2020 Copyright © Todos los derechos reservados.</p>
-        </div>
-        <footer class="footer">
-            <div class="l-footer">
-                <h1>
-                    <label class="logo">OnBoard</label></h1>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam atque recusandae in sit sunt molestiae aliquid fugit. Mollitia eaque tempore iure sit nobis? Vitae nemo, optio maiores numquam quis recusandae.</p>
-            </div>
-            <ul class="r-footer">
-                <li>
-                    <h2>Redes Sociales</h2>
-                    <ul class="box">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </li>
-                <li class="features">
-                    <h2>Información</h2>
-                    <ul class="box h-box">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Precios</a></li>
-                        <li><a href="#">Ventas</a></li>
-                        <li><a href="#">Tickets</a></li>
-                        <li><a href="#">Servicio al cliente</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h2>Legal</h2>
-                    <ul class="box">
-                        <li><a href="#">Politica de Privacidad</a></li>
-                        <li><a href="#">Terminos de uso</a></li>
-                        <li><a href="#">Contrato</a></li>
     </footer>
     
     <!-- scripts de la pagina -->
