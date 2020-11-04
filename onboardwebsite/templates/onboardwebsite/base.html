@@ -19,11 +19,20 @@
             <img src="{% static 'onboardwebsite/imagenes/menu.png' %}" class="menu-icon" alt="">
             <nav>
                 <ul>
-                    <li><a href="{% url 'onboardwebsite:index' %}">Inicio</a></li>
-                    <li><a href="{% url 'onboardwebsite:galeria' %}">Galeria</a></li>
-                    <li><a href="{% url 'onboardwebsite:reservas' %}">Reservas</a></li>
-                    <li><a href="{% url 'onboardwebsite:registro' %}">Registro</a></li>
-                    <li><a href="{% url 'onboardwebsite:contacto' %}">Contacto</a></li>
+                    <li><a href="{% url 'onboardwebsite:index' %}">inicio</a></li>
+                    <li><a href="{% url 'onboardwebsite:galeria' %}">galeria</a></li>
+                    <li><a href="{% url 'onboardwebsite:reservas' %}">reservas</a></li>
+                    <li><a href="{% url 'onboardwebsite:contacto' %}">contacto</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout' %}">cerrar sesión</a>
+                    </li>
+                    <li><a href="#">@{{ user.username }}</a></li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">iniciar sesión</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
