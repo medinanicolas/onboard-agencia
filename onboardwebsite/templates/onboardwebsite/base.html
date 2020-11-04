@@ -26,11 +26,15 @@
     <nav class="menu">
         <label class="logo">OnBoard</label>
         <ul class="menu_items">
-            <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'onboardwebsite:index' %}">Inicio</a></li>
-            <li class="{% if request.path == '/galeria/' %}active{% endif %}"><a href="{% url 'onboardwebsite:galeria' %}">Galeria</a></li>
-            <li class="{% if request.path == '/contacto/' %}active{% endif %}"><a href="{% url 'onboardwebsite:contacto' %}">Contacto</a></li>
-            
-            <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+            <li><a href="{% url 'onboardwebsite:index' %}">Inicio</a></li>
+            <li><a href="{% url 'onboardwebsite:galeria' %}">Galeria</a></li>
+            <li><a href="{% url 'onboardwebsite:contacto' %}">Contacto</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">cerrar sesión</a></li>
+                <li><a href=#>@{{ user.username }}</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">iniciar sesión</a></li>
+            {% endif %}
         </ul>
         <span class="btn_menu">
             <i class="fa  fa-bars"></i>
