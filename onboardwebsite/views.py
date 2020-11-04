@@ -9,10 +9,9 @@ from django.contrib import messages
 def index(request):
     header = Header.objects.latest('id')
     nosotros = Nosotros.objects.latest('id')
-    post = Post.objects.latest('id')
 
-    context = {'header':header, 'nosotros':nosotros, 'post':post}
-    return render(request, 'onboardwebsite/index.html', context)
+    data = {'header':header, 'nosotros':nosotros}
+    return render(request, 'onboardwebsite/index.html', data)
 
 def contacto(request):
     data = {
@@ -46,3 +45,6 @@ def registro(request):
     else:
         formulario = RegistrarUsuario()
     return render(request, 'registration/registro.html', data)
+
+def experiencias(request):
+    pass
