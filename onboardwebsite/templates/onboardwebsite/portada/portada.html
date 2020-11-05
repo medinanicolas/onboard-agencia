@@ -1,0 +1,67 @@
+{% extends 'onboardwebsite/base.html' %}
+{%block titulo %}
+<title>Administración de portada</title>
+{%endblock%}
+{%load crispy_forms_tags %}
+{%block content%}
+<h1>Administración de portada</h1>
+<h2>Header</h2>
+{%if header %}
+<table class="table table-stripped table-hover">
+<tr>
+    <td>Id</td>
+    <td>Titulo</td>
+    <td>Texto</td>
+    <td>Fecha</td>
+    <td>Autor</td>
+    <td>Acción</td>
+</tr>
+{% for h in header %}
+<tr>
+    <td>{{ h.id }}</td>
+    <td>{{ h.header_title }}</td>
+    <td>{{ h.header_text }}</td>
+    <td>{{ h.header_pubdate }}</td>
+    <td>{{ h.header_autor }}</td>
+    <td>
+        <form action="" method="post">
+        <input type="submit" value="Modificar">
+        </form>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{%else%}
+<p>No existen elementos</p>
+<form action="" method="post">
+    <input type="submit" value="Agregar">
+    </form>
+{%endif%}
+<h2>Nosotros</h2>
+<table class="table table-stripped table-hover">
+<tr>
+    <td>Id</td>
+    <td>Titulo</td>
+    <td>Texto</td>
+    <td>Imagen</td>
+    <td>Fecha</td>
+    <td>Autor</td>
+    <td>Acción</td>
+</tr>
+{% for n in nosotros %}
+<tr>
+    <td>{{ h.id }}</td>
+    <td>{{ n.nosotros_title }}</td>
+    <td>{{ n.nosotros_text }}</td>
+    <td>{{ n.nosotros_imagen }}</td>
+    <td>{{ n.nosotros_pubdate }}</td>
+    <td>{{ n.nosotros_autor }}</td>
+    <td>
+        <form action="" method="post">
+        <input type="submit" value="Modificar">
+        </form>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{%endblock%}

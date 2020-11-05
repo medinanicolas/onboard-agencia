@@ -2,10 +2,9 @@
 
 {% load static %}
     {% block titulo %}
-    <title>Inicio</title>
-    
-
+    <title>Onboard | Agencia de viajes</title>
     {% endblock %}
+
   {% block css %}
   <link rel="stylesheet" href="{% static 'onboardwebsite/css/inicio.css' %}">
   {% endblock %}
@@ -54,36 +53,16 @@
         <p class="titulo">Testimonios</p>
         <hr>
         <h2>Qué Opinan Nuestros Clientes</h2>
+        <a href="{% url 'onboardwebsite:experiencias' %}">Dejanos tus comentarios!</a>
         <div class="contenedor-testimonials">
-            <div class="testimonial">
-                <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="">
-                <h3>“Excelente. Muy recomendado!”</h3>
-                <p class="texto">“Excelente atención. Mucha amabilidad y empatía, full recomendado para descansar un ratito junto a tu familia. Ma-ra-vi-llo-so.“
-                </p>
-                <p class="nombre">Leandra</p>
-            </div>
-            <div class="testimonial">
-                <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="">
-                <h3>“Muy buena experiencia”</h3>
-                <p class="texto">“Casi me comen los canibales pero como buen futre que soy fui protegido por el brazo armado del capitalismo. Excelente servicio!“
-                </p>
-                <p class="nombre">Maximiliano Angelini Angelini</p>
-            </div>
-            <div class="testimonial">
-                <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="">
-                <h3>“Precio y calidad</h3>
-                <p class="texto">“Muy accesible, me sentí como nunca antes.“
-                </p>
-                <p class="nombre">José</p>
-            </div>
-            <div class="testimonial">
-                <img src="{% static 'onboardwebsite/imagenes/estrellas.png' %}" alt="">
-                <h3>“Espectacular”</h3>
-                <p class="texto">“Recomiendo OnBoard 100% en un link.“
-                </p>
-                <p class="nombre">Bot Martinez</p>
-            </div>
+            <p>TEST POSTS</p>
+            {% for p in posts %}
+                {{ p.post_text }}
+                <img src="{{ p.post_image.url }}" alt="">
+                {{ p.post_image.url }}
+            {%endfor%}
         </div>
+        <a href="{% url 'onboardwebsite:post_agregar' %}">AGREGAR TEST/a>
     </div>
   </section>  
 

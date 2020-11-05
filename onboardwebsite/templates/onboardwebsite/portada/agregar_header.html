@@ -1,0 +1,11 @@
+{% extends 'onboardwebsite/base.html' %}
+{%block titulo %}
+    <title>Agregar Header</title>
+{%endblock%}
+{%block content%}
+<form action="" method="POST">
+    {{form}}
+    {% csrf_token %}
+    <input type="submit" value="Agregar">
+</form>
+{%endblock%}

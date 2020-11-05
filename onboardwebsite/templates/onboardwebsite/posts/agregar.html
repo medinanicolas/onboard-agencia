@@ -1,0 +1,12 @@
+{% extends 'onboardwebsite/base.html' %}
+{% block title %}
+    <title>Agregar post</title>
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="Agregar">
+</form>
+{% endblock %}

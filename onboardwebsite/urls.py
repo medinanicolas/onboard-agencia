@@ -1,13 +1,19 @@
 from django.urls import path
-from . import views
+from .views import *
  
 #Añadir todos los links del website aquí
 app_name = "onboardwebsite"
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('galeria/', views.registro, name='galeria'),
-    path('reservas/', views.registro, name='reservas'),
-    path('registro/', views.registro, name='registro'),
-    path('contacto/', views.contacto, name='contacto'),
-    #path('experiencias/', views.experiencias, name='experiencias'),
-]
+    #GENERAL
+    path('', index, name='index'),
+    path('galeria/', registro, name='galeria'),
+    path('reservas/', registro, name='reservas'),
+    path('registro/', registro, name='registro'),
+    path('contacto/', contacto, name='contacto'),
+    path('experiencias/', experiencias, name='experiencias'),
+    #ADMIN PORTADA
+    path('portada/', portada, name="portada"),
+    path('agregar_header/', agregar_header, name="agregar_portada"),
+    #ADMIN POSTS
+    path('agregar_post/', post_agregar, name="post_agregar")
+]   
