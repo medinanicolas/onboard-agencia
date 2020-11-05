@@ -1,9 +1,10 @@
-from django.shortcuts import render, HttpResponse,redirect,get_object_or_404
+from django.shortcuts import render, HttpResponse,redirect,get_object_or_404, Http404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from .forms import HeaderForm, NosotrosForm, RegistrarUsuario, ContactoUsuario, ExperienciasUsuario, PostForm
 from .models import Header, Nosotros, Post, Experiencias
 from django.contrib import messages
+from django.core.paginator import Paginator
 #               GENERAL
 def index(request):
     header = Header.objects.latest('id')
@@ -63,7 +64,13 @@ def experiencias(request):
 @permission_required("onboardwebsite.view_post")
 def posts(request):
     posts = Post.objects.all()
-    data= {"posts":posts}
+    page = request.GET.get('page', 1)
+    try:
+        paginator = Paginator(posts, 3)
+        posts = paginator.page(page)
+    except Exception as e:
+        raise Http404
+    data= {"entity":posts, "paginator":paginator}
     return render(request, "onboardwebsite/posts/posts.html", data)
 @permission_required("onboardwebsite.add_post")
 def agregar_post(request):
@@ -151,7 +158,7 @@ def agregar_nosotros(request):
             else:
                 data["form"]=formulario
         else:
-            messages.error(request, "Ya existe un Nosotros activo")
+            messages.warning(request, "Ya existe un Nosotros activo")
             return redirect(to="onboardwebsite:portada")
     return render(request, 'onboardwebsite/portada/agregar_nosotros.html', data)
 @permission_required("onboardwebsite.change_nosotros")

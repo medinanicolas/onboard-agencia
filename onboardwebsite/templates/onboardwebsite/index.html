@@ -51,7 +51,7 @@
                                 <h1><span style="color:#c29d63">{{e.get_calificacion_display}}</span></h1>
                                 <h2>{{e.titulo}}</h2>
                                 <p class="lead text-muted"><q><em>{{e.mensaje}}</em></q></p>
-                                <p class="lead"><cite> <small>-{{e.username | title}}</small></cite></p>
+                                <p class="lead"><cite><small>-{{e.username | title}}</small></cite></p>
                                 <h1></h1>
                             </div>
                             {%endfor%}
@@ -74,13 +74,14 @@
             <div class="card">
                 <img src="{{ p.post_image.url }}" class="card-img-top">
                 <div class="card-body">
-                    <h1 class="card-title" style="color:#c29d63">desde ${{ p.post_precio | intcomma }}</h1>
+                    <h4 class="card-title" style="color:#c29d63">desde ${{ p.post_precio | intcomma }}</h4>
                     <h2 class="card-title">{{p.post_title}}</h2>
                     <p class="card-text text-muted">{{ p.post_text }}</p>
                 </div>
             </div>
             {%endfor%}
         </div>
+    </div>
     </div>
 </section>
 <hr>

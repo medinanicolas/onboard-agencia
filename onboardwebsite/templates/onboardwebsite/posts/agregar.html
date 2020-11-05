@@ -1,12 +1,23 @@
 {% extends 'onboardwebsite/base.html' %}
-{% block title %}
-    <title>Agregar post</title>
-{% endblock %}
-
-{% block content %}
-<form action="" method="POST" enctype="multipart/form-data">
-    {{ form }}
-    {% csrf_token %}
-    <input type="submit" value="Agregar">
-</form>
-{% endblock %}
+{%load crispy_forms_tags%}
+{%block titulo %}
+<title>Agregar Post</title>
+{%endblock%}
+{%block content%}
+<div class="row my-5">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h1>Agregar Post</h1>
+                <hr>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {{form | crispy}}
+                    {% csrf_token %}
+                    <input type="submit" value="Agregar" class="btn btn-secondary float-right"
+                        style="background-color: #c39d63;color: white;">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

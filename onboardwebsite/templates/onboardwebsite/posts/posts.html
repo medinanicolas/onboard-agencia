@@ -9,7 +9,7 @@
 <div class="row justify-content-center">
     <div class="col-10">
         <h2>Posts <a href="{%url 'onboardwebsite:agregar_post'%}" class="btn btn-success">Agregar</a></h2>
-        {%if posts %}
+        {%if entity %}
         <div class="table-responsive">
             <table class="table table-stripped table-hover">
                 <thead class="thead-dark">
@@ -24,7 +24,7 @@
                         <th>Acción</th>
                     </tr>
                 </thead>
-                {% for p in posts %}
+                {% for p in entity %}
                 <tbody>
                     <tr>
                         <td>{{ p.id }}</td>
@@ -43,6 +43,9 @@
                 </tbody>
                 {% endfor %}
             </table>
+            <div>
+                {%include 'onboardwebsite/paginator.html' %}
+            </div>
         </div>
         {%else%}
         <p>No existen elementos</p>
