@@ -13,9 +13,14 @@ urlpatterns = [
     path('experiencias/', experiencias, name='experiencias'),
     #ADMIN PORTADA
     path('portada/', portada, name="portada"),
-    path('agregar_header/', agregar_header, name="agregar_header"),
-    path('agregar_nosotros', agregar_nosotros, name="agregar_nosotros"),
-    path('modificar_nosotros/<id>/', modificar_nosotros, name="modificar_nosotros"),
+    path('agregar-header/', agregar_header, name="agregar_header"),
+    path('modificar-header/<id>/', modificar_header, name="modificar_header"),
+    path('agregar-nosotros', agregar_nosotros, name="agregar_nosotros"),
+    path('modificar-nosotros/<id>/', modificar_nosotros, name="modificar_nosotros"),
+    
     #ADMIN POSTS
-    path('agregar_post/', post_agregar, name="post_agregar")
+    path('posts/', posts, name="posts"),
+    path('agregar-post/', agregar_post, name="agregar_post"),
+    path('modificar-post/<id>/', modificar_post, name="modificar_post"),
+    path('eliminar-post/<id>/', eliminar_post, name="eliminar_post"),
 ]   

@@ -1,0 +1,77 @@
+{% extends 'onboardwebsite/base.html' %}
+{%block titulo %}
+<title>Administración de posts</title>
+{%endblock%}
+{%load static%}
+
+{%block content%}
+<h1 class="display-4 text-center py-3">Administración de posts</h1>
+<div class="row justify-content-center">
+    <div class="col-10">
+        <h2>Posts <a href="{%url 'onboardwebsite:agregar_post'%}" class="btn btn-success">Agregar</a></h2>
+        {%if posts %}
+        <div class="table-responsive">
+            <table class="table table-stripped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Texto</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Fecha</th>
+                        <th>Autor</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                {% for p in posts %}
+                <tbody>
+                    <tr>
+                        <td>{{ p.id }}</td>
+                        <td>{{ p.post_title }}</td>
+                        <td>{{ p.post_text }}</td>
+                        <td>{{ p.post_precio }}</td>
+                        <td><img src="{{ p.post_image.url }}" class="d-block h-10 img-thumbnail"></td>
+                        <td>{{ p.post_pub_date }}</td>
+                        <td>{{ p.post_autor }}</td>
+                        <td>
+                            <a href="{%url 'onboardwebsite:modificar_post' p.id %}"
+                                class="btn btn-primary">Modificar</a>
+                        <a onclick="eliminarPost({{p.id}})" href="#" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+        {%else%}
+        <p>No existen elementos</p>
+        {%endif%}
+    </div>
+</div>
+{%block scripts %}
+<script>
+    function eliminarPost(id) {
+        Swal.fire({
+            "text": "¿Desea eliminar el producto?",
+            "icon": "question",
+            "showCancelButton": true,
+            "cancelbuttonText": "Cancelar",
+            "confirmButtonText": "Eliminar",
+            "reverseButtons": true,
+            "confirmButtonColor": "#dc3545"
+        })
+        .then(function (result) {
+            if (result.isConfirmed) {
+                window.location.href = "/eliminar-post/" + id + "/"
+            }
+        })
+    }
+</script>
+{%endblock%}
+<style>
+    td img {
+        width: 100px;
+    }
+</style>
+{%endblock%}

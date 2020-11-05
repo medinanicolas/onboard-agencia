@@ -4,78 +4,86 @@
 {%endblock%}
 {%load static%}
 {%block content%}
-<h1>Administración de portada</h1>
-<h2>Header</h2>
-{%if header %}
-<table class="table table-stripped table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th>Id</th>
-            <th>Titulo</th>
-            <th>Texto</th>
-            <th>Fecha</th>
-            <th>Autor</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
-    {% for h in header %}
-    <tbody>
-        <tr>
-            <td>{{ h.id }}</td>
-            <td>{{ h.header_title }}</td>
-            <td>{{ h.header_text }}</td>
-            <td>{{ h.header_pubdate }}</td>
-            <td>{{ h.header_autor }}</td>
-            <td>
-                <a href="" class="btn btn-primary">Modificar</a>
-            </td>
-        </tr>
-    </tbody>
-    {% endfor %}
-</table>
-
-{%else%}
-<p>No existen elementos</p>
-<form action="" method="post">
-    <input type="submit" value="Agregar" class="btn btn-primary">
-</form>
-{%endif%}
-<h2>Nosotros</h2>
-{%if nosotros %}
-<div class="table-responsive">
-    <table class="table table-stripped table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th>Id</th>
-                <th>Titulo</th>
-                <th>Texto</th>
-                <th>Imagen</th>
-                <th>Fecha</th>
-                <th>Autor</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        {% for n in nosotros %}
-        <tbody>
-            <tr>
-                <td>{{ n.id }}</td>
-                <td>{{ n.nosotros_title }}</td>
-                <td>{{ n.nosotros_text }}</td>
-                <td><img src="{{ n.nosotros_image.url }}" class="d-block h-10 img-thumbnail"></td>
-                <td>{{ n.nosotros_pubdate }}</td>
-                <td>{{ n.nosotros_autor }}</td>
-                <td>
-                    <a href="{%url 'onboardwebsite:modificar_nosotros' n.id %}" class="btn btn-primary">Modificar</a>
-                </td>
-            </tr>
-        </tbody>
-        {% endfor %}
-    </table>
+<h1 class="display-4 text-center py-3">Administración de portada</h1>
+<div class="row justify-content-center">
+    <div class="col-10">
+        <h2>Header</h2>
+        {%if header %}
+        <table class="table table-stripped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Titulo</th>
+                    <th>Texto</th>
+                    <th>Fecha</th>
+                    <th>Autor</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            {% for h in header %}
+            <tbody>
+                <tr>
+                    <td>{{ h.id }}</td>
+                    <td>{{ h.header_title }}</td>
+                    <td>{{ h.header_text }}</td>
+                    <td>{{ h.header_pubdate }}</td>
+                    <td>{{ h.header_autor }}</td>
+                    <td>
+                        <a href="{%url 'onboardwebsite:modificar_header' h.id %}" class="btn btn-primary">Modificar</a>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {%else%}
+        <p>No existen elementos</p>
+        <form action="" method="post">
+            <input type="submit" value="Agregar" class="btn btn-success">
+        </form>
+        {%endif%}
+    </div>
 </div>
-{%else%}
-<p>No existen elementos</p>
-<a href="{%url 'onboardwebsite:agregar_nosotros'%}" class="btn btn-primary">Agregar</a>
-{%endif%}
+<div class="row justify-content-center">
+    <div class="col-10">
+        <h2>Nosotros</h2>
+        {%if nosotros %}
+        <div class="table-responsive">
+            <table class="table table-stripped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Texto</th>
+                        <th>Imagen</th>
+                        <th>Fecha</th>
+                        <th>Autor</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                {% for n in nosotros %}
+                <tbody>
+                    <tr>
+                        <td>{{ n.id }}</td>
+                        <td>{{ n.nosotros_title }}</td>
+                        <td>{{ n.nosotros_text }}</td>
+                        <td><img src="{{ n.nosotros_image.url }}" class="d-block h-10 img-thumbnail"></td>
+                        <td>{{ n.nosotros_pubdate }}</td>
+                        <td>{{ n.nosotros_autor }}</td>
+                        <td>
+                            <a href="{%url 'onboardwebsite:modificar_nosotros' n.id %}"
+                                class="btn btn-primary">Modificar</a>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+        {%else%}
+        <p>No existen elementos</p>
+        <a href="{%url 'onboardwebsite:agregar_nosotros'%}" class="btn btn-success">Agregar</a>
+        {%endif%}
+    </div>
+</div>
 <style>
     td img {
         width: 100px;

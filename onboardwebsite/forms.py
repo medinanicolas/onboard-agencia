@@ -40,4 +40,9 @@ class ExperienciasUsuario(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = "__all__"
+        fields = [
+            "post_precio",
+            "post_title",
+            "post_text",
+            "post_image",
+        ]

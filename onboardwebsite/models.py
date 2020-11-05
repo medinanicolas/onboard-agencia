@@ -35,11 +35,11 @@ class Contacto(models.Model):
     def __str__(self):
         return self.nombre
 opciones_estrellas = [
-    [0,"⭐⭐⭐⭐⭐"],
-    [1,"⭐⭐⭐⭐"],
-    [2,"⭐⭐⭐"],
-    [3,"⭐⭐"],
-    [4,"⭐"]
+    [0," ★ ★ ★ ★ ★"],
+    [1," ★ ★ ★ ★"],
+    [2," ★ ★ ★"],
+    [3," ★ ★"],
+    [4," ★"]
 ]
 class Experiencias(models.Model):
     username = models.CharField(max_length=25)
@@ -52,10 +52,11 @@ class Experiencias(models.Model):
 #               POSTS
 class Post(models.Model):
     post_precio = models.IntegerField()
-    post_text = models.CharField(max_length=30)
-    post_descripcion = models.TextField(max_length=175)
+    post_title = models.CharField(max_length=30)
+    post_text = models.TextField(max_length=175)
     post_image = models.ImageField(upload_to='images', default='404.png')
-    pub_date = timezone.now()
+    post_autor = models.CharField(max_length=25)
+    post_pub_date = timezone.now()
 
     def __str__(self):
         return self.post_text

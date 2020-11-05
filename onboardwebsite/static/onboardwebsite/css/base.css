@@ -1,15 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', 'Signika', 'Open-Sans', sans-serif;
+    font-family: 'Merriweather','PLayfair Display', sans-serif;
 }
 hr{
     border-color: #c29d63;
 }
-footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    
-}
+ 
