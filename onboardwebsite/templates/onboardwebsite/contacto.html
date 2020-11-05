@@ -1,53 +1,36 @@
 {% extends "onboardwebsite/base.html" %}
 
 {% load static %}
-  {% block titulo %}
-  <title>Contacto</title>
+    {% load crispy_forms_tags %}
+    {% load static %}
+    {% block titulo %}
+        <title>¡Contactanos!</title>
+    {% endblock %}
+    {% block content %}
+    <div class="container">
 
-  {% endblock %}
-  {% block css %}
-  <link rel="stylesheet" href="{% static 'onboardwebsite/css/contacto.css' %}">
-  {% endblock %}
-
-  {% block content %}
-  
-  {% load crispy_forms_tags %}
-  <div id="contenido">
-        <br>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-12 col-md-6 offset-md-3">
-            <div class="card" style="z-index:1">
-              <div class="card-body">
-                <h1>¡Contactanos!</h1>
-                <hr>
-                <form action="" class="" method="post">
-
-                    {% csrf_token %}
-
-                    {{ form | crispy}}
-
-                    <br>
-                    <input type="submit" value="Enviar" class="btn btn-seondary btn-lg btn-block" style="background-color: #c39d63;">
-                </form>
+        <div class="row my-5">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>¡Contactanos!</h1>
+                        <hr>
+                        <form action="" method="post">
+                            
+                            {% csrf_token %}
+                            {{ form | crispy}}
+                            <a href="{% url 'onboardwebsite:index' %}">Ir al Inicio</a> |
+                            <a href="{% url 'login' %}">Iniciar sesion</a>
+                            <input type="submit" value="Ingresar" class="btn btn-secondary float-right" style="background-color: #c39d63;color: white;">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
     </div>
-    
-
-    <table id="tablacontactos">
-        
-    </table>
-
-
-</div>
-<style>
-    body {
-      background-image: url("{% static 'onboardwebsite/imagenes/back.jpg' %}");
-    }    
+    <style>
+        body {
+          background-image: url("{% static 'onboardwebsite/imagenes/back.jpg' %}");
+        }
     </style>
-
-
 {% endblock %}

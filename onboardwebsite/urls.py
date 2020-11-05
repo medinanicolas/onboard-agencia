@@ -13,7 +13,9 @@ urlpatterns = [
     path('experiencias/', experiencias, name='experiencias'),
     #ADMIN PORTADA
     path('portada/', portada, name="portada"),
-    path('agregar_header/', agregar_header, name="agregar_portada"),
+    path('agregar_header/', agregar_header, name="agregar_header"),
+    path('agregar_nosotros', agregar_nosotros, name="agregar_nosotros"),
+    path('modificar_nosotros/<id>/', modificar_nosotros, name="modificar_nosotros"),
     #ADMIN POSTS
     path('agregar_post/', post_agregar, name="post_agregar")
 ]   

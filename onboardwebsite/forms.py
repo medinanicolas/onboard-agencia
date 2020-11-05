@@ -2,7 +2,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from .models import Header, Nosotros, Contacto, Experiencias, Post
-
 class HeaderForm(forms.ModelForm):
     class Meta:
         model = Header
@@ -10,7 +9,11 @@ class HeaderForm(forms.ModelForm):
 class NosotrosForm(forms.ModelForm):
     class Meta:
         model = Nosotros
-        fields = "__all__"
+        fields = [
+            "nosotros_title",
+            "nosotros_text",
+            "nosotros_image"
+        ]
 class RegistrarUsuario(UserCreationForm):
     class Meta:
         model = User

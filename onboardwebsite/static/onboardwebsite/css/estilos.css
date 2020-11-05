@@ -4,20 +4,6 @@
     outline: 0;
     box-sizing: border-box;
 }
-a {
-    text-decoration: none;
-    color: #000;
-}
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f4;
-}
-
-.contenedor {
-    width: 95%;
-    max-width: 2560px;
-    margin:auto;
-}
 .menu {
     background-color: #fff;
     height: 75px;
@@ -67,6 +53,7 @@ body {
     cursor: pointer;
     display: none;
 }
+/*
 hr{
     border-color: #c29d63;
 }
@@ -76,7 +63,7 @@ ul.show {
 
 
 
-/* Footer */
+/* Footer 
 
 .footer {
     flex-flow: row wrap;
@@ -223,3 +210,4 @@ h2 {
         margin-left: -0px;
     }
 }
+*/

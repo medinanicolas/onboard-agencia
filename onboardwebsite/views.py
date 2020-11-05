@@ -1,19 +1,20 @@
 from django.shortcuts import render, HttpResponse,redirect,get_object_or_404
 from django.contrib.auth import login, authenticate
-from .forms import *
-from .models import Header, Nosotros, Post
+from django.contrib.auth.decorators import login_required, permission_required
+from .forms import HeaderForm, NosotrosForm, RegistrarUsuario, ContactoUsuario, ExperienciasUsuario, PostForm
+from .models import Header, Nosotros, Post, Experiencias
 from django.contrib import messages
-
 #               GENERAL
 def index(request):
-    header = Header.objects.all()
+    header = Header.objects.latest('id')
     nosotros = Nosotros.objects.latest('id')
     posts = Post.objects.order_by('-id')[:3]
-    data = {'header':header, 'nosotros':nosotros, "posts":posts}
+    experiencias = Experiencias.objects.all()
+    data = {'header':header, 'nosotros':nosotros, "posts":posts, "experiencias":experiencias}
     return render(request, 'onboardwebsite/index.html', data)
 def registro(request):
     if request.user.is_authenticated:
-        messages.error(request, "Ya estás registrado")
+        messages.warning(request, "Ya estás registrado")
         return redirect(to="onboardwebsite:index") 
     data = {
         "form":RegistrarUsuario()
@@ -42,10 +43,8 @@ def contacto(request):
         else:
             data["form"] = formulario
     return render(request, 'onboardwebsite/contacto.html', data)
+@login_required
 def experiencias(request):
-    if not request.user.is_authenticated:
-        messages.error(request, "Debes estar registrado para calificarnos")
-        return redirect(to="onboardwebsite:index") 
     data = {
         "form":ExperienciasUsuario()
     }
@@ -61,6 +60,7 @@ def experiencias(request):
         formulario = ExperienciasUsuario()
     return render(request, 'onboardwebsite/experiencias.html', data)
 #            POSTS
+@permission_required("onboardwebsite.view_post")
 def post_agregar(request):
     data = {
         "form":PostForm()
@@ -75,6 +75,14 @@ def post_agregar(request):
             data["form"] = formulario
     return render(request, 'onboardwebsite/posts/agregar.html', data)
 #               ADMIN PORTADA
+@permission_required("onboardwebsite.view_header")
+@permission_required("onboardwebsite.view_nosotros")
+def portada(request):
+    header = Header.objects.all()
+    nosotros = Nosotros.objects.all()
+    data = {"header":header, "nosotros":nosotros}
+    return render(request, 'onboardwebsite/portada/portada.html', data)
+@permission_required("onboardwebsite.view_header")
 def agregar_header(request):
     data = {"form":HeaderForm()}
     if request.method=="POST":
@@ -88,21 +96,14 @@ def agregar_header(request):
             else:
                 data["form"]=formulario
         else:
-            messages.error(request, "Ya existe un Header activo")
+            messages.warning(request, "Ya existe un Header activo")
             return redirect(to="onboardwebsite:portada")
     return render(request, 'onboardwebsite/portada/agregar_header.html', data)
-def portada(request):
-    header = Header.objects.all()
-    nosotros = Nosotros.objects.all()
-    data = {"header":header, "nosotros":nosotros}
-    if request.user.is_authenticated:
-        return render(request, 'onboardwebsite/portada/portada.html', data)
-    else:
-        messages.error(request, "No tienes permiso para esto")
+@permission_required("onboardwebsite.view_nosotros")
 def agregar_nosotros(request):
-    data = {"form":HeaderForm()}
+    data = {"form":NosotrosForm()}
     if request.method=="POST":
-        formulario = NosotrosForm(data=request.POST)
+        formulario = NosotrosForm(data=request.POST, files=request.POST)
         if Nosotros.objects.all().count() < 1:
             if formulario.is_valid():
                 formulario.instance.nosotros_autor = request.user.username
@@ -112,6 +113,20 @@ def agregar_nosotros(request):
             else:
                 data["form"]=formulario
         else:
-            messages.error(request, "Ya existe un Header activo")
+            messages.error(request, "Ya existe un Nosotros activo")
             return redirect(to="onboardwebsite:portada")
-    return render(request, 'onboardwebsite/portada/agregar_header.html', data)
+    return render(request, 'onboardwebsite/portada/agregar_nosotros.html', data)
+@permission_required("onboardwebsite.change_nosotros")
+def modificar_nosotros(request, id):
+    nosotros = get_object_or_404(Nosotros, id=id)
+    data = {"form":NosotrosForm(instance=nosotros)}
+    if request.method=="POST":
+        formulario = NosotrosForm(data=request.POST, files=request.FILES, instance=nosotros)
+        if formulario.is_valid():
+            
+            formulario.save()
+            messages.success(request, "Nosotros actualizado correctamente")
+            return redirect(to="onboardwebsite:portada")
+        else:
+            data["form"]=formulario
+    return render(request, 'onboardwebsite/portada/modificar_nosotros.html', data)

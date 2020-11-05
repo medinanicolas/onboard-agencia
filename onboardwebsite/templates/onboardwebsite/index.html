@@ -1,70 +1,85 @@
 {% extends "onboardwebsite/base.html" %}
+{%load static%}
+{% block titulo %}
+<title>Onboard | Agencia de viajes</title>
+{% endblock %}
+{%block css%}
+<link rel="stylesheet" href="{% static 'onboardwebsite/css/index.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container-fluid py-5 text-center text-white bg">
+    <header class="py-3">
+        <div class="container">
 
-{% load static %}
-    {% block titulo %}
-    <title>Onboard | Agencia de viajes</title>
-    {% endblock %}
+            <h1 class="display-3">{{ header.header_title }}</h1>
+            <br><br>
+            <p class="lead mb-5">{{ header.header_text }}</p>
 
-  {% block css %}
-  <link rel="stylesheet" href="{% static 'onboardwebsite/css/inicio.css' %}">
-  {% endblock %}
+            <div class="container botones">
+                <a href="" class="btn btn-info">Ver planes</a>
+                <a href="" class="btn btn-light">Reservas</a>
+            </div>
+    </header>
+</div>
+<!-- Nosotros -->
+<section>
+    <div class="container-fluid py-5">
+        <div class="row justify-content-center">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 text-right">
+                <h1 class="display-5 ">Nosotros</h1>
+                <hr>
+                <h2>{{ nosotros.nosotros_title }}</h2>
+                <p class="lead">{{ nosotros.nosotros_text}}</p>
+            </div>
 
-  {% block content %}
-    <!-- Panel -->
-    <section id="intro" >
-        <div class="contenedor">
-            <div class="contenedor-titulo">
-                <div class="titulo">
-                    <h1>{{ header.titulo_text }}</h1>
-                    <p>{{ header.subtitulo_text }}</p>
-                    <div class="botones">
-                        <a href="" class="planes">Ver planes</a>
-                        <a href="" class="reservation">Reservas</a>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                <img src="{{ nosotros.nosotros_image.url }}" class="d-block img-thumbnail mx-auto">
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-left">
+                <h1 class="display-5">Experiencias</h1>
+                <hr class="hr">
+                <div id="carouselReseñas" class="carousel slide" data-ride="carousel" data-interval=4000>
+                    <div class="carousel-inner">
+                        {%for e in experiencias %}
+                        {%if forloop.first %}
+                        <div class="carousel-item active">
+                            {%else%}
+                            <div class="carousel-item">
+                                {%endif%}
+                                <h2>{{e.get_calificacion_display}} - {{e.username | title}}</h2>
+                                <h2>{{e.titulo}}</h2>
+                                <p class="lead">{{e.mensaje}}</p>
+                                <h5>{{e.pub_date}}</h5>
+                                <h1></h1>
+                            </div>
+                            {%endfor%}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-  <!-- Nosotros -->
-    <section id="nosotros">
-        <div class="contenedor">
-            <div class="izquierda">
-                <p class="nosotros">Nosotros</p>
-                <hr>
-                <h2>Bienvenido a bordo</h2>
-                <p class="texto">{{ nosotros.nosotros_text}}</p>
-                <p class="texto">¡No te quedes abajo! Ven con nosotros y disfruta de tu mejor destino.</p>
-            </div>
-            <div class="derecha">
-                <img src="{{ nosotros.nosotros_image.url }}" alt="">
-            </div>
-        </div>
-    </section>
-  <!-- Lugares -->
-  {% load humanize %}
-  <section id="menu">
-      <div class="contenedor">
-        <p class="titulo">Ofertas</p>
-      </div>
-  </section>
-  <!-- Testimonios -->
-  <section id="testimonials">
-    <div class="contenedor">
-        <p class="titulo">Testimonios</p>
-        <hr>
-        <h2>Qué Opinan Nuestros Clientes</h2>
-        <a href="{% url 'onboardwebsite:experiencias' %}">Dejanos tus comentarios!</a>
-        <div class="contenedor-testimonials">
-            <p>TEST POSTS</p>
+    </div>
+</section>
+<hr>
+<!-- Lugares / Ofertas -->
+{%load humanize%}
+<section>
+    <div class="container-fluid bg-dark pb-5">
+        <h1 class="text-center text-light p-3">Lugares populares</h1>
+        <div class="card-deck">
             {% for p in posts %}
-                {{ p.post_text }}
-                <img src="{{ p.post_image.url }}" alt="">
-                {{ p.post_image.url }}
+            <div class="card">
+                <img src="{{ p.post_image.url }}" class="card-img-top">
+                <div class="card-body">
+                    <h1 class="card-title">{{ p.post_precio | intcomma }}</h1>
+                    <h2 class="card-title">{{p.post_text}}</h2>
+                    <p class="card-text">{{ p.post_descripcion }}</p>
+                </div>
+            </div>
             {%endfor%}
         </div>
-        <a href="{% url 'onboardwebsite:post_agregar' %}">AGREGAR TEST/a>
     </div>
-  </section>  
-
-
-  {% endblock %}
+</section>
+<hr>
+{% endblock %}

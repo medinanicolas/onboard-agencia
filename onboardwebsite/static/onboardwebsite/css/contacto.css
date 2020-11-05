@@ -4,12 +4,8 @@
     min-height: 100vh;
     
 }
-hr{
-    border-color: #c29d63;
-}
 input[type=text], input[type=email],
 input[type=number], select, textarea {
-
     width: 100%;
     padding: 5px;
 }

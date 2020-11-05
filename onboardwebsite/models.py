@@ -14,6 +14,7 @@ class Nosotros(models.Model):
     nosotros_title = models.CharField(max_length=25)
     nosotros_text = models.TextField(max_length=350)
     nosotros_image = models.ImageField(upload_to='images', default='404.png')
+    nosotros_autor = models.CharField(max_length=25)
     nosotros_pubdate = timezone.now()
     def __str__(self):
         return self.nosotros_text
@@ -44,7 +45,7 @@ class Experiencias(models.Model):
     username = models.CharField(max_length=25)
     titulo = models.CharField(max_length=10, help_text="Describe tu experiencia en una palabra")
     calificacion = models.IntegerField(choices=opciones_estrellas)
-    mensaje = models.TextField(max_length=350, help_text="Describenos tu experiencia con nuestros servicios")
+    mensaje = models.TextField(max_length=350, help_text="Describenos tu experiencia con OnBreak")
     pub_date = timezone.now()
     def __str__(self):
         return self.titulo
