@@ -1,0 +1,79 @@
+{% extends 'onboardwebsite/base.html' %}
+{%block titulo %}
+<title>Administración de contactos</title>
+{%endblock%}
+{%load static%}
+
+{%block content%}
+<h1 class="display-4 text-center py-3">Administración de contactos</h1>
+<div class="row justify-content-center">
+    <div class="col-10">
+        <h2>Contactos</h2>
+        {%if entity %}
+        <div class="table-responsive">
+            <table class="table table-stripped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Texto</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Fecha</th>
+                        <th>Autor</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                {% for p in entity %}
+                <tbody>
+                    <tr>
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.nombre }} {{ c.apellidos }}</td>
+                        <td>{{ c.nombre }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.mensaje }}</td>
+                        <td>{{ c.pub_date }}</td>
+                        <td>
+                            <a href="{%url '' c.id %}"
+                                class="btn btn-primary">Responder</a>
+                        <a onclick="eliminarContacto({{p.id}})" href="#" class="btn btn-danger">Spam</a>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+            <div>
+                {%include 'onboardwebsite/paginator.html' %}
+            </div>
+        </div>
+        {%else%}
+        <p>No existen elementos</p>
+        {%endif%}
+    </div>
+</div>
+{%block scripts %}
+<script>
+    function eliminarContacto(id) {
+        Swal.fire({
+            "text": "¿Desea eliminar el contacto?",
+            "icon": "question",
+            "showCancelButton": true,
+            "cancelbuttonText": "Cancelar",
+            "confirmButtonText": "Eliminar",
+            "reverseButtons": true,
+            "confirmButtonColor": "#dc3545"
+        })
+        .then(function (result) {
+            if (result.isConfirmed) {
+                window.location.href = "/eliminar-post/" + id + "/"
+            }
+        })
+    }
+</script>
+{%endblock%}
+<style>
+    td img {
+        width: 100px;
+    }
+</style>
+{%endblock%}

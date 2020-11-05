@@ -60,7 +60,7 @@ def experiencias(request):
     else:
         formulario = ExperienciasUsuario()
     return render(request, 'onboardwebsite/experiencias.html', data)
-#            POSTS
+#            ADMIN POSTS
 @permission_required("onboardwebsite.view_post")
 def posts(request):
     posts = Post.objects.all()
@@ -71,7 +71,7 @@ def posts(request):
     except Exception as e:
         raise Http404
     data= {"entity":posts, "paginator":paginator}
-    return render(request, "onboardwebsite/posts/posts.html", data)
+    return render(request, "onboardwebsite/admin/posts/posts.html", data)
 @permission_required("onboardwebsite.add_post")
 def agregar_post(request):
     data = {
@@ -86,7 +86,7 @@ def agregar_post(request):
             return redirect(to="onboardwebsite:posts")
         else:
             data["form"] = formulario
-    return render(request, 'onboardwebsite/posts/agregar.html', data)
+    return render(request, 'onboardwebsite/admin/posts/agregar.html', data)
 @permission_required("onboardwebsite.change_post")
 def modificar_post(request, id):
     post = get_object_or_404(Post, id=id)
@@ -99,7 +99,7 @@ def modificar_post(request, id):
             return redirect(to="onboardwebsite:posts")
         else:
             data["form"]=formulario
-    return render(request, 'onboardwebsite/posts/modificar.html', data)
+    return render(request, 'onboardwebsite/admin/posts/modificar.html', data)
 @permission_required("onboardwebsite.delete_post")
 def eliminar_post(request, id):
     post = get_object_or_404(Post, id=id)
@@ -113,7 +113,7 @@ def portada(request):
     header = Header.objects.all()
     nosotros = Nosotros.objects.all()
     data = {"header":header, "nosotros":nosotros}
-    return render(request, 'onboardwebsite/portada/portada.html', data)
+    return render(request, 'onboardwebsite/admin/portada/portada.html', data)
 @permission_required("onboardwebsite.add_header")
 def agregar_header(request):
     data = {"form":HeaderForm()}
@@ -130,7 +130,7 @@ def agregar_header(request):
         else:
             messages.warning(request, "Ya existe un Header activo")
             return redirect(to="onboardwebsite:portada")
-    return render(request, 'onboardwebsite/portada/agregar_header.html', data)
+    return render(request, 'onboardwebsite/admin/portada/agregar_header.html', data)
 @permission_required("onboardwebsite.change_header")
 def modificar_header(request, id):
     header = get_object_or_404(Header, id=id)
@@ -143,7 +143,7 @@ def modificar_header(request, id):
             return redirect(to="onboardwebsite:portada")
         else:
             data["form"]=formulario
-    return render(request, 'onboardwebsite/portada/modificar_header.html', data)
+    return render(request, 'onboardwebsite/admin/portada/modificar_header.html', data)
 @permission_required("onboardwebsite.add_nosotros")
 def agregar_nosotros(request):
     data = {"form":NosotrosForm()}
@@ -160,7 +160,7 @@ def agregar_nosotros(request):
         else:
             messages.warning(request, "Ya existe un Nosotros activo")
             return redirect(to="onboardwebsite:portada")
-    return render(request, 'onboardwebsite/portada/agregar_nosotros.html', data)
+    return render(request, 'onboardwebsite/admin/portada/agregar_nosotros.html', data)
 @permission_required("onboardwebsite.change_nosotros")
 def modificar_nosotros(request, id):
     nosotros = get_object_or_404(Nosotros, id=id)
@@ -173,7 +173,7 @@ def modificar_nosotros(request, id):
             return redirect(to="onboardwebsite:portada")
         else:
             data["form"]=formulario
-    return render(request, 'onboardwebsite/portada/modificar_nosotros.html', data)
+    return render(request, 'onboardwebsite/admin/portada/modificar_nosotros.html', data)
 
 #Cambiar 
 def galeria(request):
