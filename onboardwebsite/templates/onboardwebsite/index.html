@@ -2,7 +2,7 @@
 
 {% load static %}
     {% block titulo %}
-    <title>Inicio</title>
+    <title>Onboard | Agencia de viajes</title>
     {% endblock %}
 
   {% block css %}
@@ -56,10 +56,13 @@
         <a href="{% url 'onboardwebsite:experiencias' %}">Dejanos tus comentarios!</a>
         <div class="contenedor-testimonials">
             <p>TEST POSTS</p>
-            {% for p in posts%}
-                <img src="{{ p.post_image.url }}">
+            {% for p in posts %}
+                {{ p.post_text }}
+                <img src="{{ p.post_image.url }}" alt="">
+                {{ p.post_image.url }}
             {%endfor%}
         </div>
+        <a href="{% url 'onboardwebsite:post_agregar' %}">AGREGAR TEST/a>
     </div>
   </section>  
 
