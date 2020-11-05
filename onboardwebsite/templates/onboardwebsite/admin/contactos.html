@@ -3,7 +3,6 @@
 <title>Administración de contactos</title>
 {%endblock%}
 {%load static%}
-
 {%block content%}
 <h1 class="display-4 text-center py-3">Administración de contactos</h1>
 <div class="row justify-content-center">
@@ -20,11 +19,10 @@
                         <th>Precio</th>
                         <th>Imagen</th>
                         <th>Fecha</th>
-                        <th>Autor</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
-                {% for p in entity %}
+                {% for c in entity %}
                 <tbody>
                     <tr>
                         <td>{{ c.id }}</td>
@@ -34,7 +32,7 @@
                         <td>{{ c.mensaje }}</td>
                         <td>{{ c.pub_date }}</td>
                         <td>
-                            <a href="{%url '' c.id %}"
+                            <a href=""
                                 class="btn btn-primary">Responder</a>
                         <a onclick="eliminarContacto({{p.id}})" href="#" class="btn btn-danger">Spam</a>
                         </td>

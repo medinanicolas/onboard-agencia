@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse,redirect,get_object_or_404, Ht
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from .forms import HeaderForm, NosotrosForm, RegistrarUsuario, ContactoUsuario, ExperienciasUsuario, PostForm
-from .models import Header, Nosotros, Post, Experiencias
+from .models import Header, Nosotros, Post, Experiencias, Contacto
 from django.contrib import messages
 from django.core.paginator import Paginator
 #               GENERAL
@@ -174,7 +174,17 @@ def modificar_nosotros(request, id):
         else:
             data["form"]=formulario
     return render(request, 'onboardwebsite/admin/portada/modificar_nosotros.html', data)
-
+@permission_required("onboardwebsite.view_contacto")
+def contactos(request):
+    contactos = Contacto.objects.all()
+    page = request.GET.get('page', 1)
+    try:
+        paginator = Paginator(contactos, 10)
+        contactos = paginator.page(page)
+    except Exception as e:
+        raise Http404
+    data= {"entity":contactos, "paginator":paginator}
+    return render(request, 'onboardwebsite/admin/contactos.html', data)
 #Cambiar 
 def galeria(request):
     posts = Post.objects.all()
