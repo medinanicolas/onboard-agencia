@@ -174,3 +174,11 @@ def modificar_nosotros(request, id):
         else:
             data["form"]=formulario
     return render(request, 'onboardwebsite/portada/modificar_nosotros.html', data)
+
+#Cambiar 
+def galeria(request):
+    posts = Post.objects.all()
+    data = {
+        'lugares': posts
+    }
+    return render(request, "onboardwebsite/galeria.html",data)

@@ -6,7 +6,7 @@ app_name = "onboardwebsite"
 urlpatterns = [
     #GENERAL
     path('', index, name='index'),
-    path('galeria/', registro, name='galeria'),
+    path('galeria/', galeria, name='galeria'),
     path('reservas/', registro, name='reservas'),
     path('registro/', registro, name='registro'),
     path('contacto/', contacto, name='contacto'),

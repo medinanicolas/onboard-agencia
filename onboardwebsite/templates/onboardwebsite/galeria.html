@@ -1,0 +1,40 @@
+{% extends "onboardwebsite/base.html" %}
+
+{% load static %}
+    {% block titulo %}
+    <title>Onboard | Galeria</title>
+    {% endblock %}
+
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'onboardwebsite/css/galeria.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  {% endblock %}
+
+  {% block content %}
+  
+  <div id="contenido">
+    <br><br>
+    <h1>Lugares</h1>
+    <hr>
+    <br><br>
+    <div class="galeria">
+        {% for i in lugares %}
+            {% if i.post_image %}
+            
+            <!-- Cambia los i. cuestion por los q definiste en el model de galeria -->
+            <a data-fancybox="gallery" href="{{ i.post_image.url}}"><img src="{{ i.post_image.url}}">
+            <p>{{i.post_title}}</p></a>
+
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+    
+  
+
+  {% endblock %}
+
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  {% endblock %}
