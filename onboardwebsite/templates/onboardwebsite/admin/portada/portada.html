@@ -9,7 +9,7 @@
     <div class="col-10">
         <h2>Header</h2>
         {%if header %}
-        <table class="table table-stripped table-hover">
+        <table class="table table-stripped table-hover table-responsive">
             <thead class="thead-dark">
                 <tr>
                     <th>Id</th>
@@ -47,8 +47,7 @@
     <div class="col-10">
         <h2>Nosotros</h2>
         {%if nosotros %}
-        <div class="table-responsive">
-            <table class="table table-stripped table-hover">
+            <table class="table table-stripped table-hover table-responsive">
                 <thead class="thead-dark">
                     <tr>
                         <th>Id</th>
@@ -77,7 +76,6 @@
                 </tbody>
                 {% endfor %}
             </table>
-        </div>
         {%else%}
         <p>No existen elementos</p>
         <a href="{%url 'onboardwebsite:agregar_nosotros'%}" class="btn btn-success">Agregar</a>
