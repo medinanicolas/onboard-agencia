@@ -38,6 +38,8 @@ urlpatterns = [
     path('reset_password_complete/', 
         auth_views.PasswordResetCompleteView.as_view(template_name="cuentas/password_reset_done.html"), 
         name="password_reset_complete"),
+    path('social-auth/', include('social_django.urls', namespace="social")),
+
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

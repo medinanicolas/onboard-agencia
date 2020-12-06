@@ -25,6 +25,9 @@
     {% block css %}
     {% endblock %}
 
+    {% load pwa %}
+    {% progressive_web_app_meta %}
+
     <!--<script src="{% static 'onboardwebsite/vendor/app.js' %}" defer></script>-->
     <link rel="icon" type="image/png" href="{% static 'onboardwebsite/img/onboard.png' %}">
 </head>
@@ -69,6 +72,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href=#>@{{ user.username }}</a>
                 </li>
+                {% for auth in backends.associated %}
+
+                    {% if auth.provider == 'facebook' %}
+                        <img src="{{ auth.extra_data.picture.data.url }}" alt="" width="50" height="50">
+                    {% endif %}
+                {% endfor %}
+
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">iniciar sesión</a>

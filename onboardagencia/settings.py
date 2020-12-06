@@ -26,11 +26,15 @@ SECRET_KEY = '1yh#8j8@ic^(t@mb%zdr_u^%3q#44i(474b89u7p@%cn%j_y7g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = "399019474629680"
+SOCIAL_AUTH_FACEBOOK_SECRET = "3cac6b71f2e40dfda762051e03c78295"
 
 # Application definition
 
@@ -44,6 +48,8 @@ INSTALLED_APPS = [
     'onboardwebsite.apps.OnboardwebsiteConfig',
     'django.contrib.humanize',
     'crispy_forms',
+    'social_django',
+    'pwa',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -56,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'onboardagencia.urls'
@@ -71,10 +78,29 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', 
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link'] 
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {  
+  'fields': 'id, name, email, picture.type(large), link'
+}
+
+
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [               
+    ('name', 'name'),
+    ('email', 'email'),
+    ('picture', 'picture'),
+    ('link', 'profile_url'),
+]
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+LOGIN_ERROR_URL = '/accounts/login/'
 
 WSGI_APPLICATION = 'onboardagencia.wsgi.application'
 
@@ -139,3 +165,30 @@ EMAIL_POST = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'djangodwy@gmail.com'
 EMAIL_HOST_PASSWORD = 'N@ncybern4l'
+
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+PWA_APP_NAME= "OnBoard"
+PWA_APP_DESCRIPTION = "Página de paquetes turísticos"
+PWA_APP_THEME_COLOR = "#343A40"
+PWA_APP_BACKGROUND_COLOR = "#1f1f1f"
+
+PWA_APP_ICONS = [
+    {
+        "src": "/static/onboardwebsite/imagenes/logoontour.png",
+        "sizes": "144x144"
+    }
+]
+
+PWA_APP_ICONS_APPLE = [
+    {
+        "src": "/static/onboardwebsite/imagenes/logoontour.png",
+        "sizes": "144x144"
+    }
+]
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, "serviceworker.js")

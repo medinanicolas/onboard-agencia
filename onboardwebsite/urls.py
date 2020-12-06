@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from .views import *
  
 #Añadir todos los links del website aquí
@@ -26,4 +26,5 @@ urlpatterns = [
     path('eliminar-post/<id>/', eliminar_post, name="eliminar_post"),
     #   ADMIN CONTACTOS
     path('contactos/', contactos, name="contactos"),
+    path('', include('pwa.urls')),
 ]   
