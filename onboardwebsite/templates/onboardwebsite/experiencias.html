@@ -1,11 +1,33 @@
-{% extends 'onboardwebsite/base.html' %}
-{% block titulo%}
-    <title>Experiencias de usuario</title>
-{%endblock%}
-{%block content%}
-<form action="" method="POST">
-    {%csrf_token%}
-    {{form}}
-<input type="submit" value="Enviar">
-</form>
-{%endblock%}
+{% extends "onboardwebsite/base.html" %}
+
+{% load static %}
+    {% load crispy_forms_tags %}
+    {% load static %}
+    {% block titulo %}
+        <title>Experiencias de Usuario</title>
+    {% endblock %}
+    {% block content %}
+    <div class="container">
+
+        <div class="row my-5">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Escribe tu reseña</h1>
+                        <hr>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form | crispy}}
+                            <input type="submit" value="Enviar" class="btn btn-secondary float-right" style="background-color: #c39d63;color: white;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        body {
+          background-image: url("{% static 'onboardwebsite/imagenes/back.jpg' %}");
+        }
+    </style>
+{% endblock %}
