@@ -197,3 +197,10 @@ def galeria(request):
 class PostViewset(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+    def get_queryset(self):
+        post = Post.objects.all()
+        post_title = self.request.GET.get('titulo')
+        if post_title:
+            post = post.filter(post_title__contains=post_title)
+        return post
