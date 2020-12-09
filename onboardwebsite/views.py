@@ -5,6 +5,8 @@ from .forms import HeaderForm, NosotrosForm, RegistrarUsuario, ContactoUsuario, 
 from .models import Header, Nosotros, Post, Experiencias, Contacto
 from django.contrib import messages
 from django.core.paginator import Paginator
+from rest_framework import viewsets
+from .serializers import PostSerializer
 #               GENERAL
 def index(request):
     header = Header.objects.latest('id')
@@ -192,3 +194,6 @@ def galeria(request):
         'lugares': posts
     }
     return render(request, "onboardwebsite/galeria.html",data)
+class PostViewset(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer

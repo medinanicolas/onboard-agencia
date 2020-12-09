@@ -1,6 +1,10 @@
 from django.urls import path,include
 from .views import *
- 
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('post', PostViewset)
+
 #Añadir todos los links del website aquí
 app_name = "onboardwebsite"
 urlpatterns = [
@@ -27,4 +31,5 @@ urlpatterns = [
     #   ADMIN CONTACTOS
     path('contactos/', contactos, name="contactos"),
     path('', include('pwa.urls')),
+    path('api/', include(router.urls))
 ]   
